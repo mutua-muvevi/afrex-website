@@ -1,42 +1,90 @@
 import { Page } from "../../components/page";
+import { coreValuesList } from "../../constants/core-values";
+import { officeLocation } from "../../constants/offices";
+import { whyUsAccordion } from "../../constants/why-us";
 import ReusableBanner from "../../modules/banner/banner";
+import LeftRight from "../../modules/content/left-right";
+import Subscribe from "../../modules/subscribe/subscribe";
+import Offices from "../home/sections/offices";
+import AboutAccordion from "./sections/accordion";
+import CoreValues from "./sections/core";
 
 const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
 const content = [
-	{
-		title: "Content One",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
-	{
-		title: "Content Two",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
+	"Foreign companies invest in Kenya and set up local and regional operations to take advantage of Kenya's strategic location, diverse economy, entrepreneural and skilled workforce, comprehensive road and airport infrastructure and status as a regional finance center. It is the mostindustrially developed country in East Africa with gross domestic product of $ 96 billion.",
+	"We, at Afrex, open up investment opportunities for foreign companies and individuals who are seeking to expand existing businesses and create companies in Kenya and overseas.",
+	"We have helped many companies expand to countries around the world. We guide investors seeking business opportunities and contracts through the complex process of public and private procurement requirements set by various regulation.",
+	"Kenya a country of 54 million people, has a market-based economy and is widely regarded as the economics, commercial, financial and logistical center of East Africa.it is considered to have the strongest industrial base in East africa and has succeeded in attracting foreign investors from all walks of life"
 ];
 
 const About = () => {
+
+	const aboutPage = {
+		banner: {
+			title: "About us",
+			subtitle: "The latest news from Afrex Bridge Connections",
+			type: "image",
+			src: image,
+			height: "70vh",
+		},
+		intro: {
+			title: "Who we are",
+			subtitle: "Afrex Bridge Connections is a company that helps foreign companies and individuals to invest in Kenya and overseas.",
+			content: content,
+			image: image,
+		},
+		coreValues: {
+			title: "Our Core Values",
+			subtitle: "We believe in:",
+			content: coreValuesList,
+			backgroundImage: image,
+		},
+		whyUs: {
+			title: "Why us",
+			subtitle: "We are the best",
+			content: whyUsAccordion,
+			backgroundImage: image,
+		},
+		offices: {
+			title: "Our Offices",
+			subtitle: "Where you can find us",
+			offices: officeLocation,
+		}
+	}
+
 	return (
 		<Page title="About us">
 			<ReusableBanner
-				title="About us"
-				subtitle="The latest news from Afrex Bridge Connections"
-				type="image"
+				title={aboutPage.banner.title}
+				subtitle={aboutPage.banner.subtitle}
+				type={aboutPage.banner.type}
 				src={image}
-				height="70vh"
+				height={aboutPage.banner.height}
 			/>
-			{/* <ReusableQuote
-				content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est."
+			<LeftRight
+				title={aboutPage.intro.title}
+				subtitle={aboutPage.intro.subtitle}
+				content={aboutPage.intro.content}
+				image={aboutPage.intro.image}
 			/>
-			<ContentBlocks
-				title="Content Blocks"
-				subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo."
-				content={content}
-				backgroundImage={image}
+			<CoreValues
+				title={aboutPage.coreValues.title}
+				subtitle={aboutPage.coreValues.subtitle}
+				content={aboutPage.coreValues.content}
+				backgroundImage={aboutPage.coreValues.backgroundImage}
 			/>
-			<AboutFAQ/>
-			<Subscribe/> */}
-			About
+			<AboutAccordion
+				title={aboutPage.whyUs.title}
+				subtitle={aboutPage.whyUs.subtitle}
+				content={aboutPage.whyUs.content}
+				backgroundImage={aboutPage.whyUs.backgroundImage}
+			/>
+			<Offices
+				title={aboutPage.offices.title}
+				subtitle={aboutPage.offices.subtitle}
+				offices={aboutPage.offices.offices}
+			/>
+			<Subscribe/>
 		</Page>
 	);
 };
