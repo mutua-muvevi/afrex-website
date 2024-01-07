@@ -26,17 +26,14 @@ export const LazyHome = Loadable(lazy(() => import("../pages/home/home")));
 export const LazyAbout = Loadable(lazy(() => import("../pages/about/about")));
 export const LazyContact = Loadable(lazy(() => import("../pages/contact/contact")));
 export const LazyNews = Loadable(lazy(() => import("../pages/news/news")));
-export const LazyGallery = Loadable(lazy(() => import("../pages/gallery/gallery")));
-export const LazyPricing = Loadable(lazy(() => import("../pages/pricing/pricing")));
-export const LazyReservation = Loadable(lazy(() => import("../pages/reservation/reservation")));
-export const LazyTandem = Loadable(lazy(() => import("../pages/tandem/tandem")));
-export const LazyAFF = Loadable(lazy(() => import("../pages/aff/aff")));
+export const LazyServices = Loadable(lazy(() => import("../pages/services/services")));
+export const LazyTracking = Loadable(lazy(() => import("../pages/tracking/tracking")));
 
-//------------------ Terms ans Policy ------------------
-export const LazyTerms = Loadable(lazy(() => import("../pages/terms/terms")));
-export const LazyPrivacy = Loadable(lazy(() => import("../pages/privacy/privacy")));
-export const LazySales = Loadable(lazy(() => import("../pages/sales/sales")));
-export const LazyFAQ = Loadable(lazy(() => import("../pages/faq/faq")));
+// //------------------ Terms ans Policy ------------------
+// export const LazyTerms = Loadable(lazy(() => import("../pages/terms/terms")));
+// export const LazyPrivacy = Loadable(lazy(() => import("../pages/privacy/privacy")));
+// export const LazySales = Loadable(lazy(() => import("../pages/sales/sales")));
+// export const LazyFAQ = Loadable(lazy(() => import("../pages/faq/faq")));
 
 //-------------------Redirects-------------------
 export const Page500 = Loadable(lazy(() => import("../pages/redirects/page-500")));
