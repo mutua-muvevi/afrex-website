@@ -63,25 +63,7 @@ const Home = () => {
 	};
 	return (
 		<Page title="Home">
-			<ReusableBanner
-				type="video"
-				height="70vh"
-				src={homepage.banner.src}
-				title={homepage.banner.title}
-				subtitle={homepage.banner.subtitle}
-			/>
-			<LeftRight
-				title={homepage.intro.title}
-				subtitle={homepage.intro.subtitle}
-				image={homepage.intro.image}
-				content={homepage.intro.content}
-			/>
-			<HomeTandem tandem={homepage.tandem}/>
-			<ReusableQuote content={homepage.quote} />
-			<HomeAFF aff={homepage.aff} />
-			<HomeEvent />
-			<HomeNews />
-			<Subscribe />
+			Homepage
 		</Page>
 	);
 };

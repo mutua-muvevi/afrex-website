@@ -18,24 +18,19 @@ const navConfig = [
 		path: ALL_ROUTES.ABOUT,
 	},
 	{
-		title: "Tandem",
+		title: "Services",
 		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.TANDEM,
+		path: ALL_ROUTES.SERVICES,
 	},
 	{
-		title: "AFF",
+		title: "Tracking",
 		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.AFF,
+		path: ALL_ROUTES.TRACKING,
 	},
 	{
 		title: "News",
 		icon: <Iconify icon="ic:round-grain" />,
 		path: ALL_ROUTES.NEWS,
-	},
-	{
-		title: "Gallery",
-		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.GALLERY,
 	},
 	{
 		title: "Contact",

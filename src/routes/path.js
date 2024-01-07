@@ -2,14 +2,11 @@ export const ALL_ROUTES = {
 	// Main routes
 	HOME: "/main/home",
 	ABOUT: "/main/about",
-	CONTACT: "/main/contact",
 	NEWS: "/main/news",
-	GALLERY: "/main/gallery",
-	PRICING: "/main/pricing",
-	RESERVATION: "/main/reservation",
 	SERVICES: "/main/services",
-	TANDEM: "/main/tandem",
-	AFF: "/main/aff",
+	TRACKING: "/main/tracking",
+	CONTACT: "/main/contact",
+
 	// Error routes
 	PAGE_403: "/403",
 	PAGE_404: "/404",

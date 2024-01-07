@@ -22,7 +22,7 @@ const content = [
 const About = () => {
 	return (
 		<Page title="About us">
-			<ReusableBanner
+			{/* <ReusableBanner
 				title="About us"
 				subtitle="The latest news from Skydive Rhino"
 				type="image"
@@ -39,7 +39,8 @@ const About = () => {
 				backgroundImage={image}
 			/>
 			<AboutFAQ/>
-			<Subscribe/>
+			<Subscribe/> */}
+			About
 		</Page>
 	);
 };
