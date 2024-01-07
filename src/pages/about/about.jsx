@@ -1,9 +1,5 @@
 import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
-import ContentBlocks from "../../modules/content/blocks";
-import ReusableQuote from "../../modules/quote/quote";
-import Subscribe from "../../modules/subscribe/subscribe";
-import AboutFAQ from "./sections/faq";
 
 const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
 const content = [
@@ -24,7 +20,7 @@ const About = () => {
 		<Page title="About us">
 			<ReusableBanner
 				title="About us"
-				subtitle="The latest news from Skydive Rhino"
+				subtitle="The latest news from Afrex Bridge Connections"
 				type="image"
 				src={image}
 				height="70vh"

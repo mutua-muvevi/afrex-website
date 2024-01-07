@@ -1,12 +1,5 @@
 import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
-import HomeTandem from "./sections/tandem";
-import HomeAFF from "./sections/aff";
-import Subscribe from "../../modules/subscribe/subscribe";
-import HomeNews from "./sections/news";
-import HomeEvent from "./sections/event";
-import ReusableQuote from "../../modules/quote/quote";
-import LeftRight from "../../modules/content/left-right";
 
 const video =
 	"https://res.cloudinary.com/dqweh6zte/video/upload/v1698327008/skydive%20rhino/videos/skydive_1080p_u3mdwh.mp4";
@@ -22,7 +15,7 @@ const Home = () => {
 	const homepage = {
 		banner: {
 			src: video,
-			title: "Skydive Rhino",
+			title: "Afrex Bridge Connections",
 			subtitle: subtitle,
 		},
 		intro: {
@@ -59,11 +52,20 @@ const Home = () => {
 				"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg",
 				"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg",
 			]
+
 		},
 	};
+	const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg"
+	
 	return (
 		<Page title="Home">
-			Homepage
+			<ReusableBanner
+				title="Afrex "
+				subtitle="The latest news from Afrex Bridge Connections"
+				type="video"
+				src={homepage.banner.src}
+				height="70vh"
+			/>
 		</Page>
 	);
 };

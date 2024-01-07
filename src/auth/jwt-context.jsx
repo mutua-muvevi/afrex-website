@@ -12,7 +12,6 @@ import localStorageAvailable from "../utils/localstorage-available";
 //
 import { isValidToken, setSession } from "./utils";
 import { useDispatch } from "../redux/store";
-import { fetchAllServices } from "../redux/slices/services";
 
 // ----------------------------------------------------------------------
 
@@ -80,8 +79,6 @@ export function AuthProvider({ children }) {
 
 	
 	const initialize = useCallback(async () => {
-		//fetch service
-		reduxDispatch(fetchAllServices());
 		
 		try {
 			const accessToken = storageAvailable
@@ -90,10 +87,6 @@ export function AuthProvider({ children }) {
 
 			if (accessToken && isValidToken(accessToken)) {
 				setSession(accessToken);
-
-				// const response = await axios.get("/api/account/my-account");
-
-				// const { user } = response.data;
 
 				
 

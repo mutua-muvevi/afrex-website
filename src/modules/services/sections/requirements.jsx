@@ -30,7 +30,7 @@ const ServiceRequirements = ({  requirements }) => {
 				<Stack direction="column" spacing={3}>
 					<TitleSubtitle
 						title={requirements.title ? requirements.title : "Requirements"}
-						subtitle={requirements.subtitle ? requirements.subtitle : "The latest news from Skydive Rhino"}
+						subtitle={requirements.subtitle ? requirements.subtitle : "The latest news from Afrex Bridge Connections"}
 						position="left"
 					/>
 
