@@ -77,7 +77,7 @@ const ContactUpperBody = () => {
 					<Card>
 						<Iframe
 							src={mapSource}
-							title="Skydive Rhino Kenya Location"
+							title="Afrex Bridge Connections Kenya Location"
 							style={{
 								height: "50vh",
 								border: "0",

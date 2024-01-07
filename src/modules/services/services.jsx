@@ -25,7 +25,7 @@ const Services = ({
 				subtitle={
 					banner.subtitle
 						? banner.subtitle
-						: "The latest news from Skydive Rhino"
+						: "The latest news from Afrex Bridge Connections"
 				}
 				type="image"
 				src={banner.image}

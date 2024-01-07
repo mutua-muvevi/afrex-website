@@ -10,7 +10,7 @@ const News = () => {
 		<Page title="News">
 			<ReusableBanner
 				title="News"
-				subtitle="The latest news from Skydive Rhino"
+				subtitle="The latest news from Afrex Bridge Connections"
 				type="image"
 				src={image}
 				height="70vh"

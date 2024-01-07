@@ -120,28 +120,28 @@ export function fetchSingleService(serviceID) {
 }
 
 //SERVICES
-export function fetchAllServices() {
-	return async (dispatch) => {
-		dispatch(slice.actions.startLoading());
+// export function fetchAllServices() {
+// 	return async (dispatch) => {
+// 		dispatch(slice.actions.startLoading());
 
-		try {
-			const response = await axios.get(
-				"http://localhost:8100/api/service/fetch/all",
-				{
-					headers: {
-						"Content-Type": "application/json",
-					},
-				}
-			);
+// 		try {
+// 			const response = await axios.get(
+// 				"http://localhost:8100/api/service/fetch/all",
+// 				{
+// 					headers: {
+// 						"Content-Type": "application/json",
+// 					},
+// 				}
+// 			);
 
-			const data = await response.data;
-			dispatch(slice.actions.getServicesSuccess(data));
-			return data;
-		} catch (error) {
-			dispatch(slice.actions.getServicesError(error));
-			throw error;
-		} finally {
-			dispatch(slice.actions.stopLoading());
-		}
-	};
-}
+// 			const data = await response.data;
+// 			dispatch(slice.actions.getServicesSuccess(data));
+// 			return data;
+// 		} catch (error) {
+// 			dispatch(slice.actions.getServicesError(error));
+// 			throw error;
+// 		} finally {
+// 			dispatch(slice.actions.stopLoading());
+// 		}
+// 	};
+// }
