@@ -29,7 +29,7 @@ const HomeFeatures = ({ title, subtitle, items, backgroundImage }) => {
 												component="img"
 												image={item.image}
 												alt={item.title}
-												height={200}
+												height={250}
 											/>
 											<CardContent sx={{height:300}}>
 												<Stack direction="column" spacing={3}>
