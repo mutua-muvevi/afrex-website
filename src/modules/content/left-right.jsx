@@ -1,4 +1,12 @@
-import { CardMedia, Container, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+	CardMedia,
+	Container,
+	Grid,
+	Stack,
+	Typography,
+	useMediaQuery,
+	useTheme,
+} from "@mui/material";
 import PropTypes from "prop-types";
 import TitleSubtitle from "../title-subtitle";
 
@@ -25,30 +33,30 @@ const LeftRight = ({ title, subtitle, content, image, backgroundImage }) => {
 					}}
 					spacing={6}
 				>
-					{
-						title &&
+					{title && (
 						<TitleSubtitle
 							title={title}
 							subtitle={subtitle}
 							position="left"
 						/>
-					}
+					)}
 
-					<Stack
-						direction={isMd ? "row": "column"}
-						spacing={3}
-						sx={{
-							flexWrap: "wrap",
-							justifyContent: "center",
-						}}
-					>
-						{
-							content.map((text, index) => (
-								<Typography key={index} sx={{ flex: 1 }} variant="h4" textAlign="justify">
-									{ text }
-								</Typography>
-							))
-						}
+					<Stack direction={isMd ? "row" : "column"} spacing={3}>
+						<div style={{flex:1}}>
+							<Stack direction="column" >
+								{content.map((text, index) => (
+									<Typography
+										key={index}
+										sx={{mb:3}}
+										variant="h5"
+										textAlign="justify"
+									>
+										{text}
+									</Typography>
+								))}
+							</Stack>
+						</div>
+
 						<CardMedia
 							component="img"
 							height="500"
