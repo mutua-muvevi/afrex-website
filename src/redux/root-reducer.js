@@ -9,6 +9,7 @@ import ServicesReducer from "./slices/services";
 import BlogReducer from "./slices/blogs";
 import AnnouncementReducer from "./slices/announcements";
 import EventReducer from "./slices/events";
+import StorageReducer from "./slices/storage";
 
 // ----------------------------------------------------------------------
 
@@ -21,6 +22,7 @@ const config = {
 		"announcements",
 		"services",
 		"events",
+		"storage"
 	],
 	blacklist: [],
 };
@@ -32,7 +34,7 @@ export const rootReducer = combineReducers({
 	blog: BlogReducer,
 	announcements: AnnouncementReducer,
 	events: EventReducer,
-
+	storage: StorageReducer,
 });
 
 const persistedReducer = persistReducer(config, rootReducer);

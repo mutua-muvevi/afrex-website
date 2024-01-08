@@ -56,12 +56,6 @@ const BannerImage = ({ title, subtitle, src, height, hasButton }) => {
 									</Typography>
 								) : null}
 							</Stack>
-
-							{hasButton ? (
-								<Button variant="contained" color="primary">
-									Book Now
-								</Button>
-							) : null}
 						</Stack>
 					</Grid>
 				</Grid>
