@@ -23,8 +23,7 @@ const AboutAccordion = ({ title, subtitle, content, backgroundImage }) => {
 				backgroundSize: "cover",
 				backgroundAttachment: "fixed",
 				color: backgroundImage ? "#fff" : theme.palette.text.primary,
-				paddingTop:"30px",
-				paddingBottom:"30px",
+				minHeight: "80vh"
 			}}
 		>
 			<Container maxWidth="xl" sx={{ py: 10 }}>

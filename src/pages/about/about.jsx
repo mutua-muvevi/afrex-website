@@ -24,26 +24,26 @@ const About = () => {
 			title: "About us",
 			subtitle: "The latest news from Afrex Bridge Connections",
 			type: "image",
-			src: image,
+			src: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704752520/afrex/About/pexels-antony-trivet-14167593_mkakgh.jpg",
 			height: "70vh",
 		},
 		intro: {
 			title: "Who we are",
 			subtitle: "Afrex Bridge Connections is a company that helps foreign companies and individuals to invest in Kenya and overseas.",
 			content: content,
-			image: image,
+			image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704751922/afrex/About/two-african-businessman-meeting-together_siqvfe.jpg",
 		},
 		coreValues: {
 			title: "Our Core Values",
 			subtitle: "We believe in:",
 			content: coreValuesList,
-			backgroundImage: image,
+			backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704752161/afrex/About/portrait-young-happy-african-man-woman-showing-thumbs-up_xxew2h.jpg",
 		},
 		whyUs: {
 			title: "Why us",
 			subtitle: "We are the best",
 			content: whyUsAccordion,
-			backgroundImage: image,
+			backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704752362/afrex/About/multiracial-business-people-standing-office-discuss-together-diverse-group-employees-formal-wear_vxfahh.jpg",
 		},
 		offices: {
 			title: "Our Offices",
@@ -58,7 +58,7 @@ const About = () => {
 				title={aboutPage.banner.title}
 				subtitle={aboutPage.banner.subtitle}
 				type={aboutPage.banner.type}
-				src={image}
+				src={aboutPage.banner.src}
 				height={aboutPage.banner.height}
 			/>
 			<LeftRight

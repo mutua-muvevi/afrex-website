@@ -8,9 +8,9 @@ import Textfield from "../../components/form/textfield/textfield";
 import TitleSubtitle from "../title-subtitle";
 
 const Image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704751564/afrex/homepage/beautiful-city-with-lights-close-its-busiest-highway-night_krgghi.jpg";
 const Person =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704751700/afrex/homepage/business-man-banner-concept-with-copy-space_f1gecu.jpg";
 
 const emailCapture = {
 	title: "Join our mailing list",

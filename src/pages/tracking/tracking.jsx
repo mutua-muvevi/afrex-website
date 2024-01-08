@@ -2,8 +2,6 @@ import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
 import MainTracking from "./section/main";
 
-const image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg";
 
 const Tracking = () => {
 	const banner = {
@@ -11,7 +9,7 @@ const Tracking = () => {
 		subtitle:
 			"We at Afrex Bridge Connection LLC offer various Business to Business services which include.",
 		type: "image",
-		src: image,
+		src: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704754626/afrex/About/airplane-lease_xfhykp.webp",
 		height: "70vh",
 	};
 	return (

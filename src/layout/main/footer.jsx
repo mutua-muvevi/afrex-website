@@ -47,7 +47,7 @@ const LINKS = [
 ];
 
 const image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704752520/afrex/About/pexels-antony-trivet-14167593_mkakgh.jpg";
 
 // ----------------------------------------------------------------------
 

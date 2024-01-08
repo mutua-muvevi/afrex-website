@@ -26,7 +26,7 @@ const Services = () => {
 				full assistance in the process. To do so, we observe and scrupulously meet
 				the criteria and conditions in compliance with the Kenya Company Act 2015...`,
 				link: "/services/business-registration",
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704750907/afrex/homepage/businessman-checking-bankbook_tfbxk0.jpg",
 				content: [
 					{
 						title: "Our role in Business Registration",
@@ -98,7 +98,7 @@ const Services = () => {
 				fully operational, including work permits for foreign residents, VAT and
 				PIN with the Tax Department, Social Security and Health Insurance Certificates.
 				We handle this process by doing the following.`,
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704749820/afrex/homepage/businessman-happy-about-new-contract_1_nekb8f.jpg",
 				content: [
 					{
 						title: "Our role in company registration",
@@ -169,7 +169,7 @@ const Services = () => {
 				compliance issues, conception of projects, project management, risk management,
 				marketing strategies, web design, IT management, web application).`,
 				link: "/services/professional-expertise",
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704749652/afrex/homepage/business-people-using-monitor-financial-presentation-conference-with-coworkers-men-sharing-data-analysis-marketing-strategy-with-group-colleagues-briefing-meeting_n5cr5r.jpg",
 				content: [
 					{
 						title: `Legal Compliance Experts`,
@@ -204,7 +204,7 @@ const Services = () => {
 				respond to a specific request for a given period, or be part of a framework
 				agreement often comprising several categories and profiles.`,
 				link: "/services/adminstrative-and-business-support",
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704750016/afrex/homepage/side-view-cropped-man-working-financial-report_blsiaz.jpg",
 				content: [
 					{
 						title: "Business Address",
@@ -244,7 +244,7 @@ const Services = () => {
 				give you a chance to connect with leading international companies that will help you spur
 				the growth of your company and open doors and opportunities in the global market...`,
 				link: "/services/connection-to-business-opportunity",
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704750093/afrex/homepage/african-business-male-people-shaking-hands_e3imfm.jpg",
 				content: [
 					{
 						title: "Our role in connection to business opportunity",
@@ -265,7 +265,7 @@ const Services = () => {
 				AFREX is here to also offer professional administrative services to companies or owners of
 				businesses that do not have registered offices or places to carry out their activities.`,
 				link: "/services/business-support",
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704750196/afrex/homepage/people-working-call-center_plnhnl.jpg",
 				content: [
 					{
 						title: "More about our business support service",
@@ -308,7 +308,7 @@ const Services = () => {
 				countless transshipments for deliveries to distant destinations, we offer charter flights for direct
 				transport.`,
 				link: "/services/airport-leasing",
-				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704750437/afrex/homepage/airplane-2214497_1280_abptij.jpg",
 				content: [
 					{
 						title: "Air Transport and Logistics Services",
@@ -395,7 +395,7 @@ const Services = () => {
 			title: "Afrex Facilitation Dynamics",
 			subtitle:
 				"Facilitation concerns itself with all the tasks needed to reach a productive  and impartial meeting outcome that reflects the agreed objectives and deliverables defined upfront by the meeting owner or client.",
-			backgroundImage: image,
+			backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704753952/afrex/About/wp9185479-nairobi-4k-wallpapers_bhiual.jpg",
 			items: [
 				{
 					title: `Setting ground rules`,
@@ -433,7 +433,7 @@ const Services = () => {
 		testimonials: {
 			title: "Testimonials",
 			subtitle: "What Our Customers Say About Us",
-			backgroundImage: image,
+			backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704754165/afrex/About/testimonial_xynlkr.png",
 			items: TestimonialsList,
 		},
 	};
