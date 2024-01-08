@@ -13,20 +13,20 @@ const contactItems = [
 	{
 		icon: "material-symbols:mark-email-read-rounded",
 		title: "Email",
-		subtitle: "info@skydiverhinokenya.com",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec aliquam ipsum. Curabitur sed lobortis justo, eu iaculis ex. Aliquam",
+		subtitle: "info@afrexbridgeconnections.com, admin@afrexbridgeconnections.com",
+		text: "Email us anytime",
 	},
 	{
 		icon: "tabler:phone-filled",
 		title: "Call us",
-		subtitle: "+254 700 000 000, +254 700 000 001",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec aliquam ipsum. Curabitur sed lobortis justo, eu iaculis ex. Aliquam",
+		subtitle: "+254 715 899 968",
+		text: "Call us during business hours",
 	},
 	{
 		icon: "zondicons:location",
 		title: "Location",
 		subtitle: "Nairobi, Kenya",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec aliquam ipsum. Curabitur sed lobortis justo, eu iaculis ex. Aliquam",
+		text: "Wilson Airport, off Langata Road,",
 	},
 ];
 
@@ -42,7 +42,7 @@ const ContactUpperBody = () => {
 						<Grid container spacing={3}>
 							{contactItems.map((item, index) => (
 								<Grid item xs={12}  md={4} key={index}>
-									<Card>
+									<Card sx={{minHeight: 250}}>
 										<CardContent>
 											<Stack
 												direction="column"
