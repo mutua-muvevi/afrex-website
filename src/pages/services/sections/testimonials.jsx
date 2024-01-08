@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
+import { Card, CardContent, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
 import TitleSubtitle from "../../../modules/title-subtitle";
 
