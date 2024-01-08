@@ -1,15 +1,7 @@
-import {
-	Box,
-	Container,
-	Dialog,
-	Divider,
-	Grid,
-	Modal,
-	Stack,
-	Typography,
-} from "@mui/material";
+import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import { useSelector } from "../../../redux/store";
 import ModalComponent from "../../../components/modal/modal";
+import PropTypes from "prop-types";
 
 const StorageCard = ({ open, onClose }) => {
 	const {
@@ -25,7 +17,7 @@ const StorageCard = ({ open, onClose }) => {
 	const depositorInformation = [
 		{
 			name: "Depositor's Fullname",
-			value: theStorage.depositor.fullname,
+			value: theStorage?.depositor?.fullname ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -34,7 +26,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Email",
-			value: theStorage.depositor.email,
+			value: theStorage?.depositor?.email ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -43,7 +35,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Telephone",
-			value: theStorage.depositor.telephone,
+			value: theStorage?.depositor?.telephone ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -52,7 +44,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Company",
-			value: theStorage.depositor.company,
+			value: theStorage?.depositor?.company ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -61,7 +53,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Address",
-			value: theStorage.depositor.address,
+			value: theStorage?.depositor?.address ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -73,7 +65,7 @@ const StorageCard = ({ open, onClose }) => {
 	const ownerInformation = [
 		{
 			name: "Depositor's Fullname",
-			value: theStorage.owner.fullname,
+			value: theStorage?.owner?.fullname ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -82,7 +74,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Email",
-			value: theStorage.owner.email,
+			value: theStorage?.owner?.email ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -91,7 +83,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Telephone",
-			value: theStorage.owner.telephone,
+			value: theStorage?.owner?.telephone ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -100,7 +92,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Company",
-			value: theStorage.owner.company,
+			value: theStorage?.owner?.company ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -109,7 +101,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Address",
-			value: theStorage.owner.address,
+			value: theStorage?.owner?.address ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -121,7 +113,7 @@ const StorageCard = ({ open, onClose }) => {
 	const acceptance = [
 		{
 			name: "Accepted From Date",
-			value: theStorage.acceptance.from.date,
+			value: theStorage?.acceptance?.from?.date ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -130,7 +122,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Accepted From Time",
-			value: theStorage.acceptance.from.time,
+			value: theStorage?.acceptance?.from?.time ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -139,7 +131,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "To Date",
-			value: theStorage.acceptance.to.date,
+			value: theStorage?.acceptance?.to?.date ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -148,7 +140,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "To Time",
-			value: theStorage.acceptance.to.time,
+			value: theStorage?.acceptance?.to?.time ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -160,7 +152,7 @@ const StorageCard = ({ open, onClose }) => {
 	const otherDetails = [
 		{
 			name: "Private marks, if any",
-			value: theStorage.privateMarks,
+			value: theStorage?.privateMarks ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -169,7 +161,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Assured for",
-			value: theStorage.assuredFor,
+			value: theStorage?.assuredFor ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -178,7 +170,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Storage Rate / Handling Charges",
-			value: theStorage.handlingCharges,
+			value: theStorage?.handlingCharges ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -187,7 +179,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Product Origin",
-			value: theStorage.productOrigin,
+			value: theStorage?.productOrigin ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -196,7 +188,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Receipt Number",
-			value: theStorage.receiptNumber,
+			value: theStorage?.receiptNumber ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -205,7 +197,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Receipt Valid Up To",
-			value: theStorage.receiptValidUpTo,
+			value: theStorage?.receiptValidUpTo ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -214,7 +206,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Warehouse Location",
-			value: theStorage.wareHouseLocation,
+			value: theStorage?.wareHouseLocation ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -223,7 +215,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Received by",
-			value: theStorage.receivedBy,
+			value: theStorage?.receivedBy ||"",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -234,156 +226,174 @@ const StorageCard = ({ open, onClose }) => {
 
 	return (
 		<div>
-			<ModalComponent open={open} onClose={onClose} height={600} title="Tracking Storage" >
-					{theStorage.track_number ? (
-						<Grid container spacing={3}>
-							{headerTitleList.map((item, index) => (
-								<Grid item key={index} sm={12} xs={12} sx={{p:5}}>
-									<Stack direction="row" spacing={2} sx={{pb:1}}>
-										<Typography variant="h4" gutterBottom>
-											{item.name}
-										</Typography>
-										<Typography
-											variant="h4"
-											gutterBottom
-											color="primary"
-										>
-											{item.value}
-										</Typography>
-									</Stack>
-									<Divider />
-								</Grid>
-							))}
-						</Grid>
-					) : null}
-
-					{theStorage.depositor ? (
-						<Box>
-							<Grid container spacing={3}>
-								<Grid sx={{ p: 5 }} item xs={12}>
+			<ModalComponent
+				open={open}
+				onClose={onClose}
+				height={600}
+				title="Tracking Storage"
+			>
+				{theStorage.track_number ? (
+					<Grid container spacing={3}>
+						{headerTitleList.map((item, index) => (
+							<Grid
+								item
+								key={index}
+								sm={12}
+								xs={12}
+								sx={{ p: 5 }}
+							>
+								<Stack
+									direction="row"
+									spacing={2}
+									sx={{ pb: 1 }}
+								>
 									<Typography variant="h4" gutterBottom>
-										Depositor's Information
+										{item.name}
 									</Typography>
-									<Divider />
-								</Grid>
-
-								{depositorInformation &&
-									depositorInformation.map((el) => (
-										<Grid
-											item
-											key={el.name}
-											xl={el.xl}
-											lg={el.lg}
-											md={el.md}
-											sm={el.sm}
-											xs={el.xs}
-										>
-											<Typography variant="h6">
-												{el.name}
-											</Typography>
-											<Box>
-												<Typography variant="body1">
-													{el.value}
-												</Typography>
-											</Box>
-										</Grid>
-									))}
-
-								<Grid sx={{ marginTop: "20px" }} item xs={12}>
-									<Typography variant="h4" gutterBottom>
-										Owner's Information
+									<Typography
+										variant="h4"
+										gutterBottom
+										color="primary"
+									>
+										{item.value}
 									</Typography>
-									<Divider />
-								</Grid>
-
-								{ownerInformation &&
-									ownerInformation.map((el) => (
-										<Grid
-											item
-											key={el.name}
-											xl={el.xl}
-											lg={el.lg}
-											md={el.md}
-											sm={el.sm}
-											xs={el.xs}
-										>
-											<Typography variant="h6">
-												{el.name}
-											</Typography>
-											<Box>
-												<Typography variant="body1">
-													{el.value}
-												</Typography>
-											</Box>
-										</Grid>
-									))}
-
-								<Grid sx={{ marginTop: "20px" }} item xs={12}>
-									<Typography variant="h4" gutterBottom>
-										Deposit Duration
-									</Typography>
-									<Divider />
-								</Grid>
-
-								{acceptance &&
-									acceptance.map((el) => (
-										<Grid
-											item
-											key={el.name}
-											xl={el.xl}
-											lg={el.lg}
-											md={el.md}
-											sm={el.sm}
-											xs={el.xs}
-										>
-											<Typography variant="h6">
-												{el.name}
-											</Typography>
-											<Box>
-												<Typography variant="body1">
-													{el.value}
-												</Typography>
-											</Box>
-										</Grid>
-									))}
-
-								<Grid sx={{ marginTop: "20px" }} item xs={12}>
-									<Typography variant="h4" gutterBottom>
-										Other Important Information
-									</Typography>
-									<Divider />
-								</Grid>
-
-								{otherDetails &&
-									otherDetails.map((el) => (
-										<Grid
-											item
-											key={el.name}
-											xl={el.xl}
-											lg={el.lg}
-											md={el.md}
-											sm={el.sm}
-											xs={el.xs}
-										>
-											<Typography variant="h6">
-												{el.name}
-											</Typography>
-											<Box>
-												<Typography variant="body1">
-													{el.value}
-												</Typography>
-											</Box>
-										</Grid>
-									))}
+								</Stack>
+								<Divider />
 							</Grid>
-						</Box>
-					) : null}
-					<Box sx={{pb:5}}>
+						))}
+					</Grid>
+				) : null}
 
+				{theStorage.depositor ? (
+					<Box>
+						<Grid container spacing={3}>
+							<Grid sx={{ p: 5 }} item xs={12}>
+								<Typography variant="h4" gutterBottom>
+									Depositor's Information
+								</Typography>
+								<Divider />
+							</Grid>
+
+							{depositorInformation &&
+								depositorInformation.map((el) => (
+									<Grid
+										item
+										key={el.name}
+										xl={el.xl}
+										lg={el.lg}
+										md={el.md}
+										sm={el.sm}
+										xs={el.xs}
+									>
+										<Typography variant="h6">
+											{el.name}
+										</Typography>
+										<Box>
+											<Typography variant="body1">
+												{el.value}
+											</Typography>
+										</Box>
+									</Grid>
+								))}
+
+							<Grid sx={{ marginTop: "20px" }} item xs={12}>
+								<Typography variant="h4" gutterBottom>
+									Owner's Information
+								</Typography>
+								<Divider />
+							</Grid>
+
+							{ownerInformation &&
+								ownerInformation.map((el) => (
+									<Grid
+										item
+										key={el.name}
+										xl={el.xl}
+										lg={el.lg}
+										md={el.md}
+										sm={el.sm}
+										xs={el.xs}
+									>
+										<Typography variant="h6">
+											{el.name}
+										</Typography>
+										<Box>
+											<Typography variant="body1">
+												{el.value}
+											</Typography>
+										</Box>
+									</Grid>
+								))}
+
+							<Grid sx={{ marginTop: "20px" }} item xs={12}>
+								<Typography variant="h4" gutterBottom>
+									Deposit Duration
+								</Typography>
+								<Divider />
+							</Grid>
+
+							{acceptance &&
+								acceptance.map((el) => (
+									<Grid
+										item
+										key={el.name}
+										xl={el.xl}
+										lg={el.lg}
+										md={el.md}
+										sm={el.sm}
+										xs={el.xs}
+									>
+										<Typography variant="h6">
+											{el.name}
+										</Typography>
+										<Box>
+											<Typography variant="body1">
+												{el.value}
+											</Typography>
+										</Box>
+									</Grid>
+								))}
+
+							<Grid sx={{ marginTop: "20px" }} item xs={12}>
+								<Typography variant="h4" gutterBottom>
+									Other Important Information
+								</Typography>
+								<Divider />
+							</Grid>
+
+							{otherDetails &&
+								otherDetails.map((el) => (
+									<Grid
+										item
+										key={el.name}
+										xl={el.xl}
+										lg={el.lg}
+										md={el.md}
+										sm={el.sm}
+										xs={el.xs}
+									>
+										<Typography variant="h6">
+											{el.name}
+										</Typography>
+										<Box>
+											<Typography variant="body1">
+												{el.value}
+											</Typography>
+										</Box>
+									</Grid>
+								))}
+						</Grid>
 					</Box>
+				) : null}
+				<Box sx={{ pb: 5 }}></Box>
 			</ModalComponent>
 		</div>
 	);
+};
+
+StorageCard.propTypes = {
+	open: PropTypes.bool,
+	onClose: PropTypes.func,
 };
 
 export default StorageCard;
