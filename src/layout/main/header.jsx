@@ -16,13 +16,10 @@ import Logo from "../../components/logo";
 import navConfig from "./nav/config-navigation";
 import NavMobile from "./nav/mobile";
 import NavDesktop from "./nav/desktop";
-import ModalComponent from "../../components/modal/modal";
-import Book from "../../pages/book/book";
 
 // ----------------------------------------------------------------------
 
 export default function Header() {
-	const [open, setOpen] = useState(false);
 	const carouselRef = useRef(null);
 
 	const theme = useTheme();
@@ -31,9 +28,7 @@ export default function Header() {
 
 	const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
 
-	const handleBookModal = () => {
-		setOpen(true);
-	};
+
 
 	return (
 		<>
@@ -79,14 +74,6 @@ export default function Header() {
 							<NavDesktop isOffset={isOffset} data={navConfig} />
 						)}
 
-						<Button
-							variant="contained"
-							type="button"
-							onClick={handleBookModal}
-						>
-							Book Now
-						</Button>
-
 						{!isDesktop && (
 							<NavMobile isOffset={isOffset} data={navConfig} />
 						)}
@@ -95,16 +82,6 @@ export default function Header() {
 
 				{isOffset && <Shadow />}
 			</AppBar>
-
-			<ModalComponent
-				title="Book Now"
-				open={open}
-				onClose={() => setOpen(false)}
-				height={700}
-				maxWidth="lg"
-			>
-				<Book onClose={() => setOpen(false)} />
-			</ModalComponent>
 		</>
 	);
 }
