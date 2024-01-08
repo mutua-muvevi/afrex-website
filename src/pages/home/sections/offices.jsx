@@ -36,6 +36,8 @@ const Offices = ({ title, subtitle, offices }) => {
 														key={index}
 														direction="row"
 														justifyContent="left"
+														alignItems="center"
+														spacing={2}
 													>
 														<Iconify icon="mdi:check" />
 														<Typography variant="body1">
