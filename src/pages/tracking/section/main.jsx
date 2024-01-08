@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import ModalComponent from "../../../components/modal/modal";
 import TrackStorage from "../storage/storage";
-import TrackShipment from "./shipment";
+import TrackShipment from "../shipment/shipment";
 
 const MainTracking = () => {
 	const [openTrackStorage, setOpenTrackStorage] = useState(false);

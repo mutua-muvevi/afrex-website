@@ -1,7 +1,4 @@
-import { Alert, Button, Grow, Paper, Stack } from "@mui/material";
-{
-	/* Track the storage by entering track_number in an input ans submiting it with the fetchStorage action */
-}
+import { Alert, Button, Stack } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { fetchStorage } from "../../../redux/slices/storage";
@@ -9,7 +6,6 @@ import { useDispatch } from "../../../redux/store";
 import { useState } from "react";
 import Textfield from "../../../components/form/textfield/textfield";
 import StorageCard from "./card";
-import LoadingScreen from "../../../components/loading-screen";
 
 //initial value
 const initialValues = {
@@ -26,10 +22,8 @@ const TrackStorage = () => {
 	const [alertMessage, setAlertMessage] = useState("");
 	const [alertSeverity, setAlertSeverity] = useState("info");
 
-	const [ openModal, setOpenModal ] = useState({});
-
-	
-
+	const [openModal, setOpenModal] = useState({});
+	const [data, setData] = useState({});
 
 	const handleSubmit = async (values) => {
 		try {
@@ -38,6 +32,7 @@ const TrackStorage = () => {
 			const { success, message, data } = response;
 
 			if (success) {
+				setData(data);
 				setOpenModal(true);
 			}
 
@@ -59,7 +54,7 @@ const TrackStorage = () => {
 	};
 
 	return (
-		<Stack direction="column" spacing={3} sx={{pb:5}}>
+		<Stack direction="column" spacing={3} sx={{ pb: 5 }}>
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
@@ -91,14 +86,19 @@ const TrackStorage = () => {
 					{alertMessage}
 				</Alert>
 			)}
+{console.log("From sthe Storecard",data)}
 
-			{
-				openModal ? (
-					// <Grow in timeout={1000}>
-						<StorageCard open={openModal} onClose={() => setOpenModal(false)} />
-					// </Grow>
-				) : ""
-			}
+			{data && data.track_number ? (
+				<>
+					<StorageCard
+						open={openModal}
+						onClose={() => setOpenModal(false)}
+						data={data}
+					/>
+				</>
+			) : (
+				""
+			)}
 		</Stack>
 	);
 };

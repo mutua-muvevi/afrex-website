@@ -10,6 +10,9 @@ const initialState = {
 	//shipment
 	shipment: null,
 	shipmentError: null,
+
+	shipments: null,
+	shipmentsError: null,
 };
 
 //the slice
@@ -48,6 +51,17 @@ const slice = createSlice({
 			state.isLoading = false;
 			state.shipmentError = action.payload;
 		},
+
+		//SHIPMENT
+		getShipmentsSuccess(state, action) {
+			state.isLoading = false;
+			state.shipments = action.payload;
+		},
+
+		getShipmentsError(state, action) {
+			state.isLoading = false;
+			state.shipmentsError = action.payload;
+		},
 	},
 });
 
@@ -64,6 +78,33 @@ export function fetchShipment(track_number) {
 		try {
 			const response = await axios.get(
 				`http://localhost:9900/api/shipment/fetch/track/${track_number}`,
+				{
+					headers: {
+						"Content-Type": "application/json",
+					},
+				}
+			);
+
+			const data = await response.data;
+			dispatch(slice.actions.getShipmentSuccess(data));
+			return data;
+		} catch (error) {
+			dispatch(slice.actions.getShipmentError(error));
+			throw error;
+		} finally {
+			dispatch(slice.actions.stopLoading());
+		}
+	};
+}
+
+
+// ----------------------------------------------------------------------
+export function fetchShipments() {
+	return async (dispatch) => {
+		dispatch(slice.actions.startLoading());
+		try {
+			const response = await axios.get(
+				`http://localhost:9900/api/shipment/fetch`,
 				{
 					headers: {
 						"Content-Type": "application/json",

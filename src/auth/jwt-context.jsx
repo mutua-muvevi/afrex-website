@@ -12,6 +12,7 @@ import localStorageAvailable from "../utils/localstorage-available";
 //
 import { isValidToken, setSession } from "./utils";
 import { useDispatch } from "../redux/store";
+import { fetchShipments } from "../redux/slices/shipment";
 
 // ----------------------------------------------------------------------
 
@@ -88,7 +89,7 @@ export function AuthProvider({ children }) {
 			if (accessToken && isValidToken(accessToken)) {
 				setSession(accessToken);
 
-				
+				reduxDispatch(fetchShipments());
 
 
 				dispatch({
