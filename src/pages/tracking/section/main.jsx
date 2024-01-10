@@ -12,10 +12,12 @@ import { useState } from "react";
 import ModalComponent from "../../../components/modal/modal";
 import TrackStorage from "../storage/storage";
 import TrackShipment from "../shipment/shipment";
+import Flight from "../flight/flight";
 
 const MainTracking = () => {
 	const [openTrackStorage, setOpenTrackStorage] = useState(false);
 	const [openTrackShipment, setOpenTrackShipment] = useState(false);
+	const [openTrackPlane, setOpenTrackPlane] = useState(false);
 
 	const handleOpenTrackStorage = () => {
 		setOpenTrackStorage(true);
@@ -23,6 +25,10 @@ const MainTracking = () => {
 
 	const handleTrackShipment = () => {
 		setOpenTrackShipment(true);
+	};
+
+	const handleTrackPlane = () => {
+		setOpenTrackPlane(true);
 	};
 
 	return (
@@ -33,7 +39,7 @@ const MainTracking = () => {
 						<Typography variant="h4">Track</Typography>
 						<div>
 							<Grid container spacing={3}>
-								<Grid item xs={12} md={6}>
+								<Grid item xs={12} md={4}>
 									<Card sx={{ minHeight: 500 }}>
 										<CardActionArea
 											onClick={handleTrackShipment}
@@ -55,7 +61,7 @@ const MainTracking = () => {
 									</Card>
 								</Grid>
 
-								<Grid item xs={12} md={6}>
+								<Grid item xs={12} md={4}>
 									<Card>
 										<CardActionArea
 											onClick={handleOpenTrackStorage}
@@ -70,6 +76,28 @@ const MainTracking = () => {
 												>
 													<Typography variant="h1">
 														Track your Storage
+													</Typography>
+												</Stack>
+											</CardContent>
+										</CardActionArea>
+									</Card>
+								</Grid>
+
+								<Grid item xs={12} md={4}>
+									<Card>
+										<CardActionArea
+											onClick={handleTrackPlane}
+											sx={{ height: 500 }}
+										>
+											<CardContent>
+												<Stack
+													direction="column"
+													justifyContent="center"
+													alignItems="center"
+													spacing={3}
+												>
+													<Typography variant="h1">
+														Track your Flight
 													</Typography>
 												</Stack>
 											</CardContent>
@@ -100,6 +128,16 @@ const MainTracking = () => {
 				onClose={() => setOpenTrackShipment(false)}
 			>
 				<TrackShipment onClose={() => setOpenTrackShipment(false)} />
+			</ModalComponent>
+
+			<ModalComponent
+				maxWidth="sm"
+				height={200}
+				open={openTrackPlane}
+				title="Track your Shipment"
+				onClose={() => setOpenTrackPlane(false)}
+			>
+				<Flight onClose={() => setOpenTrackPlane(false)} />
 			</ModalComponent>
 		</>
 	);

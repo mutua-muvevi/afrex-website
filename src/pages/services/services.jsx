@@ -6,7 +6,7 @@ import Testimonials from "./sections/testimonials";
 import Timeline from "./sections/timeline";
 
 const image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704752050/afrex/About/modern-business-buildings-financial-district_j2r82k.jpg";
 
 const Services = () => {
 	const servicePage = {
@@ -395,7 +395,8 @@ const Services = () => {
 			title: "Afrex Facilitation Dynamics",
 			subtitle:
 				"Facilitation concerns itself with all the tasks needed to reach a productive  and impartial meeting outcome that reflects the agreed objectives and deliverables defined upfront by the meeting owner or client.",
-			backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704753952/afrex/About/wp9185479-nairobi-4k-wallpapers_bhiual.jpg",
+			backgroundImage:
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1704753952/afrex/About/wp9185479-nairobi-4k-wallpapers_bhiual.jpg",
 			items: [
 				{
 					title: `Setting ground rules`,
@@ -433,7 +434,8 @@ const Services = () => {
 		testimonials: {
 			title: "Testimonials",
 			subtitle: "What Our Customers Say About Us",
-			backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704754165/afrex/About/testimonial_xynlkr.png",
+			backgroundImage:
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1704754165/afrex/About/testimonial_xynlkr.png",
 			items: TestimonialsList,
 		},
 	};

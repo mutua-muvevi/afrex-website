@@ -19,6 +19,7 @@ import { newsList } from "../../../constants/news";
 import { useState } from "react";
 import ModalComponent from "../../../components/modal/modal";
 import SingleNews from "../../news/single/single";
+import { useNavigate } from "react-router-dom";
 
 const content = newsList;
 
@@ -44,6 +45,8 @@ const HomeNews = () => {
 		setOpen(true);
 		setNewsItem(item);
 	};
+
+	const navigate = useNavigate();
 
 	return (
 		<>
@@ -118,6 +121,7 @@ const HomeNews = () => {
 						<Button
 							variant="contained"
 							endIcon={<Iconify icon="entypo:arrow-right" />}
+							onClick={() => navigate("/main/news")}
 						>
 							See more
 						</Button>

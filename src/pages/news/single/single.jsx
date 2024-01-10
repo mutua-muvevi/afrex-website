@@ -2,9 +2,8 @@ import { CardMedia, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
 const SingleNews = ({ newsItem }) => {
-	
 	return (
-		<Stack direction="column" spacing={3} sx={{pb:10}}>
+		<Stack direction="column" spacing={3} sx={{ pb: 10 }}>
 			<CardMedia
 				component="img"
 				height="500"
@@ -17,14 +16,7 @@ const SingleNews = ({ newsItem }) => {
 			{newsItem.intro && (
 				<Typography variant="body1">{newsItem.intro}</Typography>
 			)}
-			{newsItem.date && (
-				<Typography variant="body1">Date: {newsItem.date}</Typography>
-			)}
-			{newsItem.author && (
-				<Typography variant="body1">
-					Author: {newsItem.author}
-				</Typography>
-			)}
+
 			{newsItem.article
 				? newsItem.article.map((item, index) => (
 						<Stack key={index} direction="column" spacing={3}>
@@ -39,32 +31,45 @@ const SingleNews = ({ newsItem }) => {
 							<Typography variant="h5" color="primary">
 								{item.title}
 							</Typography>
-							{
-								item.items? item.items.map((item, index) => (
-									<Typography key={index} variant="body1">
-										{item}
-									</Typography>
-								)) : null
-							}
-							{
-								item.list ? (
-									<Stack  key={index} deirection="column" spacing={3}>
-										<Typography variant="body1">
-											{item.title}
+							{item.items
+								? item.items.map((item, index) => (
+										<Typography key={index} variant="body1">
+											{item}
 										</Typography>
-										{
-											item.items && item.items.length > 0 ? item.items.map((item, index) => (
-												<Typography key={index} variant="body1">
+								  ))
+								: null}
+							{item.list ? (
+								<Stack
+									key={index}
+									deirection="column"
+									spacing={3}
+								>
+									<Typography variant="body1">
+										{item.title}
+									</Typography>
+									{item.items && item.items.length > 0
+										? item.items.map((item, index) => (
+												<Typography
+													key={index}
+													variant="body1"
+												>
 													{item}
 												</Typography>
-											)) : null
-										}
-									</Stack>
-								) : null
-							}
+										  ))
+										: null}
+								</Stack>
+							) : null}
 						</Stack>
 				  ))
 				: ""}
+			{newsItem.date && (
+				<Typography variant="body1">Date: {newsItem.date}</Typography>
+			)}
+			{newsItem.author && (
+				<Typography variant="body1">
+					Author: {newsItem.author}
+				</Typography>
+			)}
 		</Stack>
 	);
 };

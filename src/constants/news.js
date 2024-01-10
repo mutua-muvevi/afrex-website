@@ -1,11 +1,7 @@
 const image = "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg"
 
 const office = image;
-const city = image;
 const officeTwo = image;
-const law = image;
-const avocado = image;
-const kenyachina = image;
 
 export const newsList = [
 	{
@@ -279,7 +275,7 @@ export const newsList = [
 		Omamo on Friday 10 th January 2022, the two countries signed six memorandums of
 		understanding and agreements on trade, investments, digital innovation, and green development.
 		`,
-		thumbnail: kenyachina,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704894970/afrex/testimonials/china-kenya_ghthxk.jpg",
 		article: [
 			{
 				title: `
@@ -341,7 +337,7 @@ export const newsList = [
 			can ease up the pressure. Here are some tips for opening a partnership law firm (LLP)
 			here in Kenya.
 		`,
-		thumbnail: law,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704895029/afrex/testimonials/dark-businesswoman-shaking-hands-with-male-colleague_oqvbyp.jpg",
 		article: [
 			{
 				title: `
