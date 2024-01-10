@@ -1,11 +1,7 @@
 const image = "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg"
 
 const office = image;
-const city = image;
 const officeTwo = image;
-const law = image;
-const avocado = image;
-const kenyachina = image;
 
 export const newsList = [
 	{
@@ -20,7 +16,7 @@ export const newsList = [
 			its ethics and values. It is a central hub, the  place where stakeholders, clients, potential new employees and even 
 			members of the press can physically experience your brand. 
 		`,
-		thumbnail: office,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704753112/afrex/news/colleagues-team-working-company-paperwork-doig-teamwork-analyze-documents-online-research-information-planning-corporate-presentation-with-data-charts-job-collaboration_hsrtte.jpg",
 		article: [
 			{
 				title: `
@@ -140,7 +136,7 @@ export const newsList = [
 			sub-Saharan Africa which serves as the point of entry to the larger, 300 million East African
 			market. It is generally the economic, commercial, financial and logistic hub of East Africa.
 		`,
-		thumbnail: city,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704752520/afrex/About/pexels-antony-trivet-14167593_mkakgh.jpg",
 		article: [
 			{
 				title: `
@@ -201,7 +197,7 @@ export const newsList = [
 			and aquatic farmers to export their products to the Asian country, with the goal of promoting
 			bilateral trade and increasing export trade volumes.
 		`,
-		thumbnail: avocado,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704753346/afrex/news/closeup-fresh-avocados-filling-frame_gpfans.jpg",
 		article: [
 			{
 				title: `
@@ -279,7 +275,7 @@ export const newsList = [
 		Omamo on Friday 10 th January 2022, the two countries signed six memorandums of
 		understanding and agreements on trade, investments, digital innovation, and green development.
 		`,
-		thumbnail: kenyachina,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704894970/afrex/testimonials/china-kenya_ghthxk.jpg",
 		article: [
 			{
 				title: `
@@ -341,7 +337,7 @@ export const newsList = [
 			can ease up the pressure. Here are some tips for opening a partnership law firm (LLP)
 			here in Kenya.
 		`,
-		thumbnail: law,
+		thumbnail: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704895029/afrex/testimonials/dark-businesswoman-shaking-hands-with-male-colleague_oqvbyp.jpg",
 		article: [
 			{
 				title: `

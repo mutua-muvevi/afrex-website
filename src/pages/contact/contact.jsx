@@ -4,7 +4,7 @@ import Subscribe from "../../modules/subscribe/subscribe";
 import ContactUpperBody from "./sections/body";
 import ContactForm from "./sections/form";
 
-const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
+const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1704751125/afrex/homepage/person-office-during-work-day_xgnul0.jpg"
 
 const Contact = () => {
 	return (

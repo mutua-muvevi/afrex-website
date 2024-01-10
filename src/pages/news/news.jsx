@@ -3,7 +3,7 @@ import ReusableBanner from "../../modules/banner/banner";
 import Subscribe from "../../modules/subscribe/subscribe";
 import NewsBody from "./sections/body";
 
-const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
+const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1704895216/afrex/news/blogimage1_zmgpta.png"
 
 const News = () => {
 	return (

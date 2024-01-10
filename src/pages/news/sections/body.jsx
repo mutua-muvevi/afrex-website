@@ -60,9 +60,7 @@ const NewsBody = () => {
 													>
 														{item && item.title
 															? truncateStr(
-																	sentenceCase(
-																		item.title
-																	),
+																item.title,
 																	50
 															)
 															: ""}

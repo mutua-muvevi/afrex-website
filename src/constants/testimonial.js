@@ -1,9 +1,3 @@
-
-const image1 = "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
-const image2 = "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
-const image3 = "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
-const image4 = "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
-
 export const TestimonialsList = [
 	{
 		title: "Wison M.",
@@ -12,7 +6,7 @@ export const TestimonialsList = [
 			professional business facilitation services that works effectively 
 			- Afrex bridge connection's got you covered
 		`,
-		image: image1
+		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704894256/afrex/testimonials/businessman2_imkbc9.jpg"
 	},
 	{
 		title: "Lindsy K.",
@@ -20,7 +14,7 @@ export const TestimonialsList = [
 			I am really satisfied with the Afrex bridge connection services needless to say 
 	]		the results. Afrex bridge connection is worth much more than I paid.
 		`,
-		image: image2
+		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704894250/afrex/testimonials/business_woman_s7apdu.jpg"
 	},
 	{
 		title: "Steve M.",
@@ -28,7 +22,7 @@ export const TestimonialsList = [
 			It's just amazing. Afrex bridge connection did exactly what I had in mind 
 			without any dissapointment. I am impressed and greatful.
 		`,
-		image: image3
+		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704894252/afrex/testimonials/businessman1_jmtygb.jpg"
 	},
 	{
 		title: "Jack S.",
@@ -36,6 +30,6 @@ export const TestimonialsList = [
 			Afrex bridge connection is worth much more than I paid. I am completely blown away. 
 			Just what I was looking for. Thank you Afrex Bridge Connection
 		`,
-		image: image4
+		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1704894256/afrex/testimonials/businessman_kxm8vg.jpg"
 	},
 ]

@@ -49,7 +49,6 @@ const BannerVideo = ({ title, subtitle, src, height, hasButton  }) => {
 					<Typography
 						variant="h1"
 						component="div"
-						color="text.primary"
 						sx={{textTransform: "uppercase"}}
 					>
 						{title}
@@ -57,7 +56,6 @@ const BannerVideo = ({ title, subtitle, src, height, hasButton  }) => {
 					<Typography
 						variant="h4"
 						component="div"
-						color="text.primary"
 						sx={{display: isDesktop ? "block" : "none"}}
 						textAlign="justify"
 					>
