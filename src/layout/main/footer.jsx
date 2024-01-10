@@ -40,8 +40,8 @@ const LINKS = [
 	{
 		headline: "Contact",
 		children: [
-			{ name: "support@minimals.cc", href: "#" },
-			{ name: "Los Angeles, 359  Hidden Valley Road", href: "#" },
+			{ name: "info@afrexbridgeconnections.com", href: "#" },
+			{ name: "Wilson Airport, off Langata Road, Nairobi", href: "#" },
 		],
 	},
 ];
@@ -135,12 +135,23 @@ export default function Footer() {
 							}}
 						>
 							{_socials.map((social) => (
-								<IconButton key={social.name}>
-									<Iconify
-										icon={social.icon}
-										sx={{ color: "#fff" }}
-									/>
-								</IconButton>
+								<Link
+									href={social.path}
+									target="_blank"
+									rel="noopener noreferrer"
+									key={social.name}
+									style={{
+										color: "inherit",
+										textDecoration: "none",
+									}}
+								>
+									<IconButton>
+										<Iconify
+											icon={social.icon}
+											sx={{ color: "#fff" }}
+										/>
+									</IconButton>
+								</Link>
 							))}
 						</Stack>
 					</Grid>
