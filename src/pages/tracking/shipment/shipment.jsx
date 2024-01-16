@@ -62,6 +62,11 @@ const TrackShipment = () => {
 				{({ isSubmitting }) => (
 					<Form>
 						<Stack direction="row" spacing={2}>
+							{alertMessage && (
+								<Alert severity={alertSeverity} >
+									{alertMessage}
+								</Alert>
+							)}
 							<Textfield
 								name="track_number"
 								label="Track Number"
@@ -80,11 +85,6 @@ const TrackShipment = () => {
 					</Form>
 				)}
 			</Formik>
-			{alertMessage && (
-				<Alert severity={alertSeverity} sx={{ mb: 2 }}>
-					{alertMessage}
-				</Alert>
-			)}
 
 			{data && data.track_number ? (
 				<ShipmentCard

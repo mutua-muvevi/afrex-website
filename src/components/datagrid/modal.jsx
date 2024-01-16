@@ -1,3 +1,4 @@
+import React from "react";
 import {
 	Dialog,
 	DialogTitle,
@@ -16,8 +17,26 @@ import Scrollbar from "../scrollbar";
 import { sentenceCase } from "change-case";
 import TableComponent from "../table/table";
 
-const ModalComponent = ({ selectedRow, open, onClose, title, actions }) => {
+const ModalComponent = ({
+	selectedRow,
+	open,
+	onClose,
+	title,
+	actions,
+	maxWidth,
+}) => {
 	const theme = useTheme();
+
+	// Omit _id and __v properties
+	const filteredRow = Object.fromEntries(
+		Object.entries(selectedRow || {}).filter(
+			([key]) =>
+				key !== "_id" &&
+				key !== "__v" &&
+				key !== "createdAt" &&
+				key !== "updatedAt"
+		)
+	);
 
 	// Function to render table for array values
 	const renderArrayTable = (array) => {
@@ -26,7 +45,7 @@ const ModalComponent = ({ selectedRow, open, onClose, title, actions }) => {
 	};
 
 	return (
-		<Dialog open={open} onClose={onClose} maxWidth="xl" fullWidth>
+		<Dialog open={open} onClose={onClose} maxWidth={maxWidth} fullWidth>
 			<DialogTitle
 				sx={{
 					backgroundColor: theme.palette.primary.main,
@@ -57,15 +76,15 @@ const ModalComponent = ({ selectedRow, open, onClose, title, actions }) => {
 			<DialogContent sx={{ marginTop: 3 }}>
 				<Scrollbar sx={{ height: 500 }}>
 					<Stack direction="column" spacing={3}>
-						{selectedRow &&
-							Object.entries(selectedRow).map(([key, value]) => (
+						{filteredRow &&
+							Object.entries(filteredRow).map(([key, value]) => (
 								<Stack
 									key={key}
-									direction={{ xs: "column", lg: "row" }}
-									spacing={3}
+									direction="column"
+									spacing={1.5}
 								>
 									<Typography
-										variant="subtitle2"
+										variant="h6"
 										sx={{
 											color: theme.palette.primary.main,
 											marginBottom: { xs: 1, lg: 0 },
@@ -76,18 +95,61 @@ const ModalComponent = ({ selectedRow, open, onClose, title, actions }) => {
 									{Array.isArray(value) ? (
 										renderArrayTable(value)
 									) : (
-										<Typography variant="subtitle2">
-											<span
-												style={{
-													color: theme.palette.primary
-														.main,
-												}}
-											>
-												: &nbsp;
-											</span>{" "}
-											{sentenceCase(value.toString())}
+										<Typography variant="subtitle1">
+											{typeof value === "string"
+												? sentenceCase(value.toString())
+												: null}
 										</Typography>
 									)}
+
+									{/* if the value is an object and if it has nested properties render them in terms of title subtitle */}
+									{typeof value === "object" &&
+										Object.entries(value)
+											.filter(
+												([nestedKey]) =>
+													nestedKey !== "_id" &&
+													nestedKey !== "__v"
+											)
+											.map(([nestedKey, nestedValue]) => (
+												<Stack
+													key={nestedKey}
+													direction="row"
+													spacing={3}
+												>
+													<Typography
+														variant="subtitle2"
+														sx={{
+															color: theme.palette
+																.primary.main,
+															marginBottom: {
+																xs: 1,
+																lg: 0,
+															},
+														}}
+													>
+														{nestedKey
+															? sentenceCase(
+																	nestedKey
+															  )
+															: "No data"}
+													</Typography>
+													<Typography variant="subtitle2">
+														<span
+															style={{
+																color: theme
+																	.palette
+																	.primary
+																	.main,
+															}}
+														>
+															: &nbsp;
+														</span>{" "}
+														{sentenceCase(
+															nestedValue.toString()
+														)}
+													</Typography>
+												</Stack>
+											))}
 								</Stack>
 							))}
 					</Stack>
@@ -102,17 +164,17 @@ const ModalComponent = ({ selectedRow, open, onClose, title, actions }) => {
 					>
 						Close
 					</Button>
-					{
-						actions && actions.map((action, index) => (
+					{actions &&
+						actions.map((action, index) => (
 							<Button
 								key={index}
 								onClick={() => action.onClick(selectedRow)}
 								endIcon={<Iconify icon={action.icon} />}
+								color={action.color ? action.color : "primary"}
 							>
 								{action.label}
 							</Button>
-						))
-					}
+						))}
 				</ButtonGroup>
 			</DialogActions>
 		</Dialog>
@@ -125,6 +187,7 @@ ModalComponent.propTypes = {
 	selectedRow: PropTypes.object,
 	title: PropTypes.string,
 	actions: PropTypes.array,
+	maxWidth: PropTypes.string,
 };
 
 export default ModalComponent;

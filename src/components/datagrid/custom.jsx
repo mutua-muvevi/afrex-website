@@ -41,6 +41,7 @@ DataGridCustom.propTypes = {
 	height: PropTypes.string,
 	modalActions: PropTypes.array,
 	modalTitle: PropTypes.string,
+	maxWidth: PropTypes.string,
 };
 
 const StyledDataGridContainer = styled(Card)(({ theme }) => ({
@@ -50,7 +51,7 @@ const StyledDataGridContainer = styled(Card)(({ theme }) => ({
 const StyledDataGridHeader = styled(CardHeader)(({ theme }) => ({
 	backgroundColor: theme.palette.primary.main,
 	color: theme.palette.primary.contrastText,
-	fontFamily: "'IBM Plex Sans Condensed', sans-serif",
+	fontFamily: "'Rubik', sans-serif",
 	padding: 15,
 }));
 
@@ -83,6 +84,7 @@ export default function DataGridCustom({
 	height,
 	modalActions,
 	modalTitle,
+	maxWidth,
 }) {
 	const [selectedRow, setSelectedRow] = useState(null);
 
@@ -91,11 +93,15 @@ export default function DataGridCustom({
 		return <span>{value}</span>;
 	};
 
-	const { rows, columns } = processDataForGrid(data, nestedDataRenderer);
+	const { rows, columns, itemData } = processDataForGrid(
+		data,
+		nestedDataRenderer
+	);
 
 	// Function to handle row click
-	const handleRowClick = (params) => {
-		setSelectedRow(params.row); // Set the selected row data
+	const handleRowClick = () => {
+		console.log("itemData >>>>??????????", itemData);
+		setSelectedRow(itemData); // Set the selected row data
 	};
 
 	if (columns.length > 0) {
@@ -150,6 +156,7 @@ export default function DataGridCustom({
 				onClose={() => setSelectedRow(null)}
 				actions={modalActions}
 				title={modalTitle}
+				maxWidth={maxWidth ? maxWidth : "lg"}
 			/>
 		</>
 	);

@@ -4,7 +4,8 @@ import * as Yup from "yup";
 import { useDispatch } from "../../../redux/store";
 import { useState } from "react";
 import Textfield from "../../../components/form/textfield/textfield";
-import { fetchFlights } from "../../../redux/slices/flight";
+import { fetchFlights } from "../../../redux/slices/flights";
+import FlightCard from "./card";
 
 const initialValues = {
 	originAirport: "",
@@ -86,9 +87,13 @@ const Flight = () => {
 					</Form>
 				)}
 			</Formik>
-
-			{data && data.originAirport ? (
-				<Alert severity="success">Flight found!</Alert>
+{console.log("The data we get is >>>>>>>>>>>>>>>", data)}
+			{data && data.length > 0 ? (
+				<FlightCard
+					open={openModal}
+					onClose={() => setOpenModal(false)}
+					theFlights={data}
+				/>
 			) : null}
 		</Stack>
 	)
