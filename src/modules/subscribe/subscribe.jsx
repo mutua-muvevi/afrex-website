@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Stack, useMediaQuery } from "@mui/material";
+import { Alert, Button, Container, Grid, Stack, useMediaQuery } from "@mui/material";
 import { alpha, useTheme } from "@mui/system";
 
 import { Formik, Form } from "formik";
@@ -6,6 +6,9 @@ import * as Yup from "yup";
 
 import Textfield from "../../components/form/textfield/textfield";
 import TitleSubtitle from "../title-subtitle";
+import { useState } from "react";
+import { postEmail } from "../../redux/slices/subscribe";
+import { useDispatch } from "react-redux";
 
 const Image =
 	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704751564/afrex/homepage/beautiful-city-with-lights-close-its-busiest-highway-night_krgghi.jpg";
@@ -36,11 +39,33 @@ const imageStyle = {
 };
 
 const Subscribe = () => {
+	const [alertMessage, setAlertMessage] = useState("");
+	const [alertSeverity, setAlertSeverity] = useState("info");
+
+	const dispatch = useDispatch();
 	const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("lg"));
 	const theme = useTheme();
 
-	const submitHandler = (values) => {
-		console.log(values);
+	const submitHandler = async (values, { resetForm }) => {
+		try {
+			const response = await dispatch(postEmail(values));
+			// extract success message
+			const { success, message } = response;
+
+			// Set the alert message from the response and determine severity
+			setAlertMessage(message);
+			setAlertSeverity(success ? "success" : "error");
+
+			// close the modal
+			if (success) {
+				setTimeout(() => {
+					resetForm();
+				}, 3000);
+			}
+		} catch (error) {
+			setAlertMessage(error.error || "An error occurred.");
+			setAlertSeverity("error");
+		}
 	};
 
 	return (
@@ -75,6 +100,14 @@ const Subscribe = () => {
 								justifyContent="center"
 								sx={{ height: "100%" }}
 							>
+								{alertMessage && (
+									<Alert
+										severity={alertSeverity}
+										sx={{ mb: 2 }}
+									>
+										{alertMessage}
+									</Alert>
+								)}
 								<Formik
 									initialValues={{
 										...INITIAL_FORM_STATE,
