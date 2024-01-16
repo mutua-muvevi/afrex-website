@@ -6,6 +6,7 @@ import storage from "redux-persist/lib/storage";
 
 import StorageReducer from "./slices/storage";
 import ShipmentReducer from "./slices/shipment";
+import FlightsReducer from "./slices/flights";
 
 // ----------------------------------------------------------------------
 
@@ -17,6 +18,7 @@ const config = {
 		"events",
 		"storage",
 		"shipment",
+		"flights",
 	],
 	blacklist: [],
 };
@@ -24,6 +26,7 @@ const config = {
 export const rootReducer = combineReducers({
 	storage: StorageReducer,
 	shipment: ShipmentReducer,
+	flights: FlightsReducer,
 });
 
 const persistedReducer = persistReducer(config, rootReducer);

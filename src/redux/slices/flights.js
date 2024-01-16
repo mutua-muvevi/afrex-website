@@ -5,15 +5,18 @@ const slice = createSlice({
 	name: "flights",
 	initialState: {
 		data: [],
-		loading: false,
+		isLoading: false,
 		error: null,
+
+		flight: null,
+		flightError: null,
 	},
 	reducers: {
 		startLoading: (state) => {
-			state.loading = true;
+			state.isLoading = true;
 		},
 		stopLoading: (state) => {
-			state.loading = false;
+			state.isLoading = false;
 		},
 		fetchFlights: (state, action) => {
 			state.data = action.payload;
@@ -21,6 +24,18 @@ const slice = createSlice({
 		},
 		fetchFlightsError: (state, action) => {
 			state.error = action.payload;
+		},
+		
+
+		//SET FLIGHT
+		setFlight(state, action) {
+			state.isLoading = false;
+			state.flight = action.payload;
+		},
+
+		setFlightError(state, action) {
+			state.isLoading = false;
+			state.flightError = action.payload;
 		},
 	},
 });
@@ -52,3 +67,20 @@ export const fetchFlights = (origin, destination) => async (dispatch) => {
 		dispatch(stopLoading());
 	}
 };
+
+
+//---------------------------set flight--------------------------------
+export function setFlight(flight) {
+	return async (dispatch) => {
+		dispatch(slice.actions.startLoading());
+		try {
+			dispatch(slice.actions.setFlight(flight));
+			return flight;
+		} catch (error) {
+			dispatch(slice.actions.setFlightError(error));
+			throw error;
+		} finally {
+			dispatch(slice.actions.stopLoading());
+		}
+	}
+}

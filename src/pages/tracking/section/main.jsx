@@ -17,7 +17,7 @@ import Flight from "../flight/flight";
 const MainTracking = () => {
 	const [openTrackStorage, setOpenTrackStorage] = useState(false);
 	const [openTrackShipment, setOpenTrackShipment] = useState(false);
-	const [openTrackPlane, setOpenTrackPlane] = useState(false);
+	const [openTrackFlight, setOpenTrackFlight] = useState(false);
 
 	const handleOpenTrackStorage = () => {
 		setOpenTrackStorage(true);
@@ -28,7 +28,7 @@ const MainTracking = () => {
 	};
 
 	const handleTrackPlane = () => {
-		setOpenTrackPlane(true);
+		setOpenTrackFlight(true);
 	};
 
 	return (
@@ -133,11 +133,11 @@ const MainTracking = () => {
 			<ModalComponent
 				maxWidth="sm"
 				height={200}
-				open={openTrackPlane}
-				title="Track your Shipment"
-				onClose={() => setOpenTrackPlane(false)}
+				open={openTrackFlight}
+				title="Track Flights"
+				onClose={() => setOpenTrackFlight(false)}
 			>
-				<Flight onClose={() => setOpenTrackPlane(false)} />
+				<Flight onClose={() => setOpenTrackFlight(false)} />
 			</ModalComponent>
 		</>
 	);
