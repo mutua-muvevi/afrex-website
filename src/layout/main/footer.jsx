@@ -40,7 +40,7 @@ const LINKS = [
 	{
 		headline: "Contact",
 		children: [
-			{ name: "info@afrexbridgeconnections.com", href: "#" },
+			{ name: "info@afrexbridgeconnectionscom", href: "#" },
 			{ name: "Wilson Airport, off Langata Road, Nairobi", href: "#" },
 		],
 	},
@@ -73,9 +73,9 @@ export default function Footer() {
 
 				<Typography variant="h6" component="div">
 					© All rights reserved
-					<Link href="https://skydiverhinokenya.com/">
+					<Link href="https://afrexbridgeconnections.com/">
 						{" "}
-						skydiverhinokenya.com{" "}
+						afrexbridgeconnections.com{" "}
 					</Link>
 				</Typography>
 			</Container>

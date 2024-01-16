@@ -13,7 +13,7 @@ const contactItems = [
 	{
 		icon: "material-symbols:mark-email-read-rounded",
 		title: "Email",
-		subtitle: "info@afrexbridgeconnections.com, admin@afrexbridgeconnections.com",
+		subtitle: "info@afrexbridgeconnectionscom, admin@afrexbridgeconnectionscom",
 		text: "Email us anytime",
 	},
 	{
