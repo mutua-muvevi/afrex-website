@@ -81,7 +81,7 @@ export const addReservation = (values) => async (dispatch) => {
 	dispatch(slice.actions.startLoading());
 	try {
 		const response = await axios.post(
-			"http://localhost:9900/api/reservation/post",
+			"https://afrex-bridge-connections-server.onrender.com/api/reservation/post",
 			values,
 			{
 				headers: {

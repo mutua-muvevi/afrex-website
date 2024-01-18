@@ -54,7 +54,7 @@ export function postEmail(values) {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.post(
-				`http://localhost:9900/api/email/post`,
+				`https://afrex-bridge-connections-server.onrender.com/api/email/post`,
 				values,
 				{
 					headers: {
