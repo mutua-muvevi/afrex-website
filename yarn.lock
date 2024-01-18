@@ -536,6 +536,11 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.6.tgz#22958c042e10b67463997bd6ea7115fe28cbcaf9"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
+"@fontsource/ibm-plex-sans-condensed@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/ibm-plex-sans-condensed/-/ibm-plex-sans-condensed-5.0.8.tgz#1803e5b065302e74ac4ce8945a4b89feed6be846"
+  integrity sha512-OY8/9hhKxVwO5tpnM3TxhTuvKdaiIcNc99wvbDhgUoUVESWQwwdbJmEZLYq7lIH5+uOcUDvJKtbkODnsFu3xYw==
+
 "@fullcalendar/common@^5.11.5":
   version "5.11.5"
   resolved "https://registry.yarnpkg.com/@fullcalendar/common/-/common-5.11.5.tgz#1a30a852b33ab5c1b04f4ee558941bed3c72d07f"
