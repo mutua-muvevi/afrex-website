@@ -90,6 +90,7 @@ export default function DataGridCustom({
 
 	const nestedDataRenderer = (key, value) => {
 		// Implement rendering logic for nested data
+		console.log("renerer", key, value)
 		return <span>{value}</span>;
 	};
 

@@ -43,7 +43,7 @@ export const renderNestedTable = (nestedArray) => {
 export const processDataForGrid = (data, nestedDataRenderer) => {
 	const columns = [];
 	const rows = [];
-	let itemData = {}
+	let itemData = {};
 
 	// Define a function to pluralize the column name if needed
 	const pluralize = (count, singular) => {
@@ -52,7 +52,7 @@ export const processDataForGrid = (data, nestedDataRenderer) => {
 
 	// Process each data item
 	data.forEach((item, index) => {
-		itemData = item ;
+		itemData = item;
 
 		const processedItem = {
 			...Object.keys(item).reduce((acc, key) => {
@@ -82,6 +82,7 @@ export const processDataForGrid = (data, nestedDataRenderer) => {
 						field: key,
 						headerName: headerName,
 						flex: 1,
+						minWidth: 100,
 						// Add more properties to the column if needed
 					};
 
@@ -110,8 +111,10 @@ export const processDataForGrid = (data, nestedDataRenderer) => {
 					typeof item[key] === "object" &&
 					item[key] !== null
 				) {
-					// Display only the name of the object
-					processedItem[key] = key || "";
+					// Display date pr aircraft or airport if available, else display the name of the object
+					processedItem[key] = item[key].date
+						? fDateAlt(item[key].date)
+						: item[key].name || item[key].title || item[key].aircraft || key || "";
 				}
 			}
 		});
