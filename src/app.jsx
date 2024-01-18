@@ -28,35 +28,40 @@ import SnackbarProvider from "./components/snackbar/snackbar-provider";
 // routes
 import Router from "./routes";
 
+// ----------------------------------------------------------------------
+import "./app.css";
+
 const App = () => {
 	return (
-		<ReduxProvider store={store}>
-			<PersistGate loading={null} persistor={persistor}>
-				<AuthProvider>
-					<HelmetProvider>
-						<LocalizationProvider dateAdapter={AdapterDateFns}>
-							<SettingsProvider>
-								<BrowserRouter>
-									<ScrollToTop />
-									<MotionLazyContainer>
-										<ThemeProvider>
-											<ThemeSettings>
-												<ThemeLocalization>
-													<SnackbarProvider>
-														<StyledChart />
-														<Router />
-													</SnackbarProvider>
-												</ThemeLocalization>
-											</ThemeSettings>
-										</ThemeProvider>
-									</MotionLazyContainer>
-								</BrowserRouter>
-							</SettingsProvider>
-						</LocalizationProvider>
-					</HelmetProvider>
-				</AuthProvider>
-			</PersistGate>
-		</ReduxProvider>
+		<div className="app">
+			<ReduxProvider store={store}>
+				<PersistGate loading={null} persistor={persistor}>
+					<AuthProvider>
+						<HelmetProvider>
+							<LocalizationProvider dateAdapter={AdapterDateFns}>
+								<SettingsProvider>
+									<BrowserRouter>
+										<ScrollToTop />
+										<MotionLazyContainer>
+											<ThemeProvider>
+												<ThemeSettings>
+													<ThemeLocalization>
+														<SnackbarProvider>
+															<StyledChart />
+															<Router />
+														</SnackbarProvider>
+													</ThemeLocalization>
+												</ThemeSettings>
+											</ThemeProvider>
+										</MotionLazyContainer>
+									</BrowserRouter>
+								</SettingsProvider>
+							</LocalizationProvider>
+						</HelmetProvider>
+					</AuthProvider>
+				</PersistGate>
+			</ReduxProvider>
+		</div>
 	);
 };
 
