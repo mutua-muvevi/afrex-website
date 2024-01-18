@@ -1,3 +1,5 @@
+import '@fontsource/ibm-plex-sans-condensed';
+
 // ----------------------------------------------------------------------
 
 export function remToPx(value) {

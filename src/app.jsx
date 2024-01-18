@@ -27,6 +27,7 @@ import SnackbarProvider from "./components/snackbar/snackbar-provider";
 
 // routes
 import Router from "./routes";
+import '@fontsource/ibm-plex-sans-condensed';
 
 // ----------------------------------------------------------------------
 import "./app.css";
