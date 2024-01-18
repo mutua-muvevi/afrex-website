@@ -36,7 +36,6 @@ const MainTracking = () => {
 			<Box sx={{ my: 5 }}>
 				<Container maxWidth="xl">
 					<Stack direction="column" spacing={3}>
-						<Typography variant="h4">Track</Typography>
 						<div>
 							<Grid container spacing={3}>
 								<Grid item xs={12} md={4}>
@@ -52,7 +51,7 @@ const MainTracking = () => {
 													alignItems="center"
 													spacing={3}
 												>
-													<Typography variant="h1">
+													<Typography variant="h1" textAlign="center">
 														Track your Shipment
 													</Typography>
 												</Stack>
@@ -74,7 +73,7 @@ const MainTracking = () => {
 													alignItems="center"
 													spacing={3}
 												>
-													<Typography variant="h1">
+													<Typography variant="h1" textAlign="center">
 														Track your Storage
 													</Typography>
 												</Stack>
