@@ -48,7 +48,7 @@ export const fetchFlights = (origin, destination) => async (dispatch) => {
 	dispatch(startLoading());
 	try {
 		const response = await axios.get(
-			`http://localhost:9900/api/flight/fetch/airport?originAirport=${origin}&destinationAirport=${destination}`,
+			`https://afrex-bridge-connections-server.onrender.com/api/flight/fetch/airport?originAirport=${origin}&destinationAirport=${destination}`,
 			{
 				headers: {
 					"Content-Type": "application/json",

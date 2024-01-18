@@ -63,7 +63,7 @@ export function fetchStorage(track_number) {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.get(
-				`http://localhost:9900/api/storage/fetch/track/${track_number}`,
+				`https://afrex-bridge-connections-server.onrender.com/api/storage/fetch/track/${track_number}`,
 				{
 					headers: {
 						"Content-Type": "application/json",

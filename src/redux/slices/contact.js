@@ -53,7 +53,7 @@ export function postContact(values) {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.post(
-				`http://localhost:9900/api/lead/post`,
+				`https://afrex-bridge-connections-server.onrender.com/api/lead/post`,
 				values,
 				{
 					headers: {
