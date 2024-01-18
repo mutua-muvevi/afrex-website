@@ -87,7 +87,7 @@ const Flight = () => {
 					</Form>
 				)}
 			</Formik>
-{console.log("The data we get is >>>>>>>>>>>>>>>", data)}
+			
 			{data && data.length > 0 ? (
 				<FlightCard
 					open={openModal}
