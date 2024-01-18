@@ -97,7 +97,7 @@ const MainTracking = () => {
 													spacing={3}
 												>
 													<Typography variant="h1">
-														Track your Flight
+														Track Flights
 													</Typography>
 												</Stack>
 											</CardContent>
