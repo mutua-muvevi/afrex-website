@@ -55,7 +55,7 @@ const HomeNews = () => {
 					<Stack spacing={3}>
 						<TitleSubtitle
 							title="News and Articles"
-							subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+							subtitle="Inside Afrex Bridge Connections: Your Gateway to Exclusive News and Articles – Stay Informed, Stay Inspired"
 						/>
 						<div>
 							<Grid container spacing={3}>
