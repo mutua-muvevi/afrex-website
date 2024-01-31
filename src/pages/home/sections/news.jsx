@@ -34,7 +34,7 @@ const HomeNews = () => {
 
 	let displayedContent = content;
 	if (isXl) {
-		displayedContent = content.slice(0, 3);
+		displayedContent = content.slice(0, 4);
 	} else if (isLg) {
 		displayedContent = content.slice(0, 3);
 	} else if (isMd) {
@@ -66,6 +66,7 @@ const HomeNews = () => {
 											xs={12}
 											md={6}
 											lg={4}
+											xl={3}
 											key={index}
 										>
 											<Card>
