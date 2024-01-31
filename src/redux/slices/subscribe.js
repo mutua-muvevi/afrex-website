@@ -62,6 +62,7 @@ export function postEmail(values) {
 					},
 				}
 			);
+			console.log(response.data)
 
 			const data = await response.data;
 			dispatch(slice.actions.postEmailSuccess(data));

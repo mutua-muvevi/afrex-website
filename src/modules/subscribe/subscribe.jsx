@@ -1,4 +1,11 @@
-import { Alert, Button, Container, Grid, Stack, useMediaQuery } from "@mui/material";
+import {
+	Alert,
+	Button,
+	Container,
+	Grid,
+	Stack,
+	useMediaQuery,
+} from "@mui/material";
 import { alpha, useTheme } from "@mui/system";
 
 import { Formik, Form } from "formik";
@@ -74,7 +81,7 @@ const Subscribe = () => {
 				sx={{
 					py: { md: 10, lg: 20 },
 					position: "relative",
-					backgroundImage: `linear-gradient(to bottom, rgba(0,0,0, 0.7), rgba(0,0,0,0.76)), url(${Image})`,
+					backgroundImage: `linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0,0.56)), url(${Image})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundAttachment: "fixed",
@@ -100,14 +107,6 @@ const Subscribe = () => {
 								justifyContent="center"
 								sx={{ height: "100%" }}
 							>
-								{alertMessage && (
-									<Alert
-										severity={alertSeverity}
-										sx={{ mb: 2 }}
-									>
-										{alertMessage}
-									</Alert>
-								)}
 								<Formik
 									initialValues={{
 										...INITIAL_FORM_STATE,
@@ -123,6 +122,14 @@ const Subscribe = () => {
 												position="left"
 											/>
 
+											{alertMessage && (
+												<Alert
+													severity={alertSeverity}
+													sx={{ mb: 2 }}
+												>
+													{alertMessage}
+												</Alert>
+											)}
 											<Stack
 												spacing={3}
 												direction="row"
