@@ -26,13 +26,13 @@ const contactItems = [
 		icon: "zondicons:location",
 		title: "Location",
 		subtitle: "Nairobi, Kenya",
-		text: "Wilson Airport, off Langata Road,",
+		text: "Bosto Rd, off Langata Road, Karen",
 	},
 ];
 
 const ContactUpperBody = () => {
 	const mapSource =
-		"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.025703915275!2d36.8014604820656!3d-1.321938834203717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1044928e4f75%3A0xa3cdc31c68174a47!2sLengai%20House!5e0!3m2!1sen!2ske!4v1704234603953!5m2!1sen!2ske";
+		"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.710567481948!2d36.74756930611083!3d-1.3501827626411362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f058b47391ff7%3A0x34ad2d106c6f6c37!2sAfrex%20Bridge%20Connections%20LLC!5e0!3m2!1sen!2ske!4v1706701001061!5m2!1sen!2ske";
 
 	return (
 		<div>
