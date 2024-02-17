@@ -62,7 +62,12 @@ const TrackStorage = () => {
 			>
 				{({ isSubmitting }) => (
 					<Form>
-						<Stack direction="row" spacing={2}>
+						<Stack direction="column" spacing={2}>
+							{alertMessage && (
+								<Alert severity={alertSeverity}>
+									{alertMessage}
+								</Alert>
+							)}
 							<Textfield
 								name="track_number"
 								label="Track Number"
@@ -81,12 +86,6 @@ const TrackStorage = () => {
 					</Form>
 				)}
 			</Formik>
-			{alertMessage && (
-				<Alert severity={alertSeverity} sx={{ mb: 2 }}>
-					{alertMessage}
-				</Alert>
-			)}
-{console.log("From sthe Storecard",data)}
 
 			{data && data.track_number ? (
 				<>

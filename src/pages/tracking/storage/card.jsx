@@ -2,11 +2,14 @@ import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import { useSelector } from "../../../redux/store";
 import ModalComponent from "../../../components/modal/modal";
 import PropTypes from "prop-types";
+import { useTheme } from "@emotion/react";
 
 const StorageCard = ({ open, onClose }) => {
 	const {
 		storage: { data: theStorage },
 	} = useSelector((state) => state.storage);
+	const theme = useTheme();
+	
 	const headerTitleList = [
 		{
 			name: "Track / Reference Number",
@@ -17,7 +20,7 @@ const StorageCard = ({ open, onClose }) => {
 	const depositorInformation = [
 		{
 			name: "Depositor's Fullname",
-			value: theStorage?.depositor?.fullname ||"",
+			value: theStorage?.depositor?.fullname || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -26,7 +29,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Email",
-			value: theStorage?.depositor?.email ||"",
+			value: theStorage?.depositor?.email || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -35,7 +38,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Telephone",
-			value: theStorage?.depositor?.telephone ||"",
+			value: theStorage?.depositor?.telephone || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -44,7 +47,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Company",
-			value: theStorage?.depositor?.company ||"",
+			value: theStorage?.depositor?.company || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -53,7 +56,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Address",
-			value: theStorage?.depositor?.address ||"",
+			value: theStorage?.depositor?.address || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -65,7 +68,7 @@ const StorageCard = ({ open, onClose }) => {
 	const ownerInformation = [
 		{
 			name: "Depositor's Fullname",
-			value: theStorage?.owner?.fullname ||"",
+			value: theStorage?.owner?.fullname || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -74,7 +77,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Email",
-			value: theStorage?.owner?.email ||"",
+			value: theStorage?.owner?.email || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -83,7 +86,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Telephone",
-			value: theStorage?.owner?.telephone ||"",
+			value: theStorage?.owner?.telephone || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -92,7 +95,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Company",
-			value: theStorage?.owner?.company ||"",
+			value: theStorage?.owner?.company || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -101,7 +104,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Depositor's Address",
-			value: theStorage?.owner?.address ||"",
+			value: theStorage?.owner?.address || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -113,7 +116,7 @@ const StorageCard = ({ open, onClose }) => {
 	const acceptance = [
 		{
 			name: "Accepted From Date",
-			value: theStorage?.acceptance?.from?.date ||"",
+			value: theStorage?.acceptance?.from?.date || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -122,7 +125,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Accepted From Time",
-			value: theStorage?.acceptance?.from?.time ||"",
+			value: theStorage?.acceptance?.from?.time || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -131,7 +134,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "To Date",
-			value: theStorage?.acceptance?.to?.date ||"",
+			value: theStorage?.acceptance?.to?.date || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -140,7 +143,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "To Time",
-			value: theStorage?.acceptance?.to?.time ||"",
+			value: theStorage?.acceptance?.to?.time || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -152,7 +155,7 @@ const StorageCard = ({ open, onClose }) => {
 	const otherDetails = [
 		{
 			name: "Private marks, if any",
-			value: theStorage?.privateMarks ||"",
+			value: theStorage?.privateMarks || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -161,7 +164,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Assured for",
-			value: theStorage?.assuredFor ||"",
+			value: theStorage?.assuredFor || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -170,7 +173,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Storage Rate / Handling Charges",
-			value: theStorage?.handlingCharges ||"",
+			value: theStorage?.handlingCharges || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -179,7 +182,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Product Origin",
-			value: theStorage?.productOrigin ||"",
+			value: theStorage?.productOrigin || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -188,7 +191,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Receipt Number",
-			value: theStorage?.receiptNumber ||"",
+			value: theStorage?.receiptNumber || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -197,7 +200,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Receipt Valid Up To",
-			value: theStorage?.receiptValidUpTo ||"",
+			value: theStorage?.receiptValidUpTo || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -206,7 +209,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Warehouse Location",
-			value: theStorage?.wareHouseLocation ||"",
+			value: theStorage?.wareHouseLocation || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -215,7 +218,7 @@ const StorageCard = ({ open, onClose }) => {
 		},
 		{
 			name: "Received by",
-			value: theStorage?.receivedBy ||"",
+			value: theStorage?.receivedBy || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -288,9 +291,11 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+												{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -317,9 +322,11 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+												{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -346,9 +353,11 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+												{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -375,9 +384,11 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+												{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
