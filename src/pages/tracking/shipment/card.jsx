@@ -16,6 +16,7 @@ import ModalComponent from "../../../components/modal/modal";
 import PropTypes from "prop-types";
 import { styled } from "@mui/system";
 import { fDate } from "../../../utils/format-time";
+import { useTheme } from "@emotion/react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	[`&.${tableCellClasses.head}`]: {
@@ -36,6 +37,8 @@ const ShipmentCard = ({ open, onClose }) => {
 	const {
 		shipment: { data: theShipment },
 	} = useSelector((state) => state.shipment);
+
+	const theme = useTheme()
 
 	const sortedList = theShipment.events.sort((a, b) => {
 		return b.number - a.number;
@@ -103,7 +106,7 @@ const ShipmentCard = ({ open, onClose }) => {
 
 	const cosigneeInformation = [
 		{
-			name: "Shipper's Fullname",
+			name: "Cosignee's Fullname",
 			value: theShipment?.cosignee?.fullname || "",
 			xl: 4,
 			lg: 4,
@@ -112,7 +115,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Email",
+			name: "Cosignee's Email",
 			value: theShipment?.cosignee?.email || "",
 			xl: 4,
 			lg: 4,
@@ -121,7 +124,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Telephone",
+			name: "Cosignee's Telephone",
 			value: theShipment?.cosignee?.telephone || "",
 			xl: 4,
 			lg: 4,
@@ -130,7 +133,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Company",
+			name: "Cosignee's Company",
 			value: theShipment?.cosignee?.company || "",
 			xl: 4,
 			lg: 4,
@@ -139,7 +142,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Address",
+			name: "Cosignee's Address",
 			value: theShipment?.cosignee?.address || "",
 			xl: 4,
 			lg: 4,
@@ -151,7 +154,7 @@ const ShipmentCard = ({ open, onClose }) => {
 
 	const collectorInformation = [
 		{
-			name: "Shipper's Fullname",
+			name: "Collector's Fullname",
 			value: theShipment?.collector?.fullname || "",
 			xl: 4,
 			lg: 4,
@@ -160,7 +163,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Email",
+			name: "Collector's Email",
 			value: theShipment?.collector?.email || "",
 			xl: 4,
 			lg: 4,
@@ -169,7 +172,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Telephone",
+			name: "Collector's Telephone",
 			value: theShipment?.collector?.telephone || "",
 			xl: 4,
 			lg: 4,
@@ -178,7 +181,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Company",
+			name: "Collector's Company",
 			value: theShipment?.collector?.company || "",
 			xl: 4,
 			lg: 4,
@@ -187,7 +190,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Shipper's Address",
+			name: "Collector's Address",
 			value: theShipment?.collector?.address || "",
 			xl: 4,
 			lg: 4,
@@ -238,7 +241,7 @@ const ShipmentCard = ({ open, onClose }) => {
 
 	const arrivalInformation = [
 		{
-			name: "Arrival Date",
+			name: "Destination Date",
 			value: theShipment?.arrival?.date || "",
 			xl: 4,
 			lg: 4,
@@ -247,7 +250,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Arrival Time",
+			name: "Destination Time",
 			value: theShipment?.arrival?.time || "",
 			xl: 6,
 			lg: 6,
@@ -256,7 +259,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Arrival Address",
+			name: "Destination Address",
 			value: theShipment?.arrival?.address || "",
 			xl: 4,
 			lg: 4,
@@ -265,7 +268,7 @@ const ShipmentCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Airport Code",
+			name: "Destination Airport Code",
 			value: theShipment?.arrival?.airport_code || "",
 			xl: 4,
 			lg: 4,
@@ -339,9 +342,11 @@ const ShipmentCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+											{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -374,9 +379,11 @@ const ShipmentCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+											{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -409,9 +416,11 @@ const ShipmentCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+											{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -444,9 +453,11 @@ const ShipmentCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+											{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>
@@ -460,7 +471,7 @@ const ShipmentCard = ({ open, onClose }) => {
 						<Grid container spacing={3}>
 							<Grid item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Arrival Information
+									Destination Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -479,9 +490,11 @@ const ShipmentCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box>
+										<Box sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value}
+											{el.value && el.value.length > 0
+													? el.value
+													: "_________________"}
 											</Typography>
 										</Box>
 									</Grid>

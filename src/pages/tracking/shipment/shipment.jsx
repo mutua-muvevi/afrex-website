@@ -61,7 +61,7 @@ const TrackShipment = () => {
 			>
 				{({ isSubmitting }) => (
 					<Form>
-						<Stack direction="row" spacing={2}>
+						<Stack direction="column" spacing={2}>
 							{alertMessage && (
 								<Alert severity={alertSeverity} >
 									{alertMessage}
