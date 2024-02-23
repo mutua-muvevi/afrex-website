@@ -41,7 +41,7 @@ const BannerImage = ({ title, subtitle, src, height, hasButton }) => {
 								<Typography
 									variant="h1"
 									component="div"
-									color="text.primary"
+									color="#fff"
 									sx={{textTransform: "uppercase"}}
 								>
 									{title}
@@ -50,7 +50,7 @@ const BannerImage = ({ title, subtitle, src, height, hasButton }) => {
 									<Typography
 										variant="h3"
 										component="div"
-										color="text.primary"
+										color="#fff"
 									>
 										{subtitle}
 									</Typography>
