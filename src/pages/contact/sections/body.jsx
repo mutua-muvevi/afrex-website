@@ -19,7 +19,7 @@ const contactItems = [
 	{
 		icon: "tabler:phone-filled",
 		title: "Call us",
-		subtitle: "+254 715 899 968",
+		subtitle: "0207906611",
 		text: "Call us during business hours",
 	},
 	{
