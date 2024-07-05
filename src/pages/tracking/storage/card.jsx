@@ -67,7 +67,7 @@ const StorageCard = ({ open, onClose }) => {
 
 	const ownerInformation = [
 		{
-			name: "Depositor's Fullname",
+			name: "Owner's Fullname",
 			value: theStorage?.owner?.fullname || "",
 			xl: 4,
 			lg: 4,
@@ -76,7 +76,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Email",
+			name: "Owner's Email",
 			value: theStorage?.owner?.email || "",
 			xl: 4,
 			lg: 4,
@@ -85,7 +85,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Telephone",
+			name: "Owner's Telephone",
 			value: theStorage?.owner?.telephone || "",
 			xl: 4,
 			lg: 4,
@@ -94,7 +94,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Company",
+			name: "Owner's Company",
 			value: theStorage?.owner?.company || "",
 			xl: 4,
 			lg: 4,
@@ -103,7 +103,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Address",
+			name: "Owner's Address",
 			value: theStorage?.owner?.address || "",
 			xl: 4,
 			lg: 4,
@@ -126,24 +126,6 @@ const StorageCard = ({ open, onClose }) => {
 		{
 			name: "Accepted From Time",
 			value: theStorage?.acceptance?.from?.time || "",
-			xl: 4,
-			lg: 4,
-			md: 4,
-			sm: 12,
-			xs: 12,
-		},
-		{
-			name: "To Date",
-			value: theStorage?.acceptance?.to?.date || "",
-			xl: 4,
-			lg: 4,
-			md: 4,
-			sm: 12,
-			xs: 12,
-		},
-		{
-			name: "To Time",
-			value: theStorage?.acceptance?.to?.time || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
