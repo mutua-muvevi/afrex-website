@@ -275,7 +275,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
@@ -306,7 +306,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
@@ -337,7 +337,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
@@ -368,7 +368,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
