@@ -113,10 +113,31 @@ const StorageCard = ({ open, onClose }) => {
 		},
 	];
 
-	const acceptance = [
+	// const acceptance = [
+	// 	{
+	// 		name: "Accepted From Date",
+	// 		value: theStorage?.acceptance?.from?.date || "",
+	// 		xl: 4,
+	// 		lg: 4,
+	// 		md: 4,
+	// 		sm: 12,
+	// 		xs: 12,
+	// 	},
+	// 	{
+	// 		name: "Accepted From Time",
+	// 		value: theStorage?.acceptance?.from?.time || "",
+	// 		xl: 4,
+	// 		lg: 4,
+	// 		md: 4,
+	// 		sm: 12,
+	// 		xs: 12,
+	// 	},
+	// ];
+
+	const depositedDateTime = [
 		{
-			name: "Accepted From Date",
-			value: theStorage?.acceptance?.from?.date || "",
+			name: "Date Deposited",
+			value: theStorage?.depositDate || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -124,15 +145,15 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Accepted From Time",
-			value: theStorage?.acceptance?.from?.time || "",
+			name: "Time Deposited",
+			value: theStorage?.depositTime || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
 			sm: 12,
 			xs: 12,
 		},
-	];
+	]
 
 	const otherDetails = [
 		{
@@ -252,9 +273,9 @@ const StorageCard = ({ open, onClose }) => {
 				{theStorage.depositor ? (
 					<Box>
 						<Grid container spacing={3}>
-							<Grid sx={{ p: 5 }} item xs={12}>
+							<Grid sx={{ pt: 5 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Depositor's Information
+									Depositor&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -285,7 +306,7 @@ const StorageCard = ({ open, onClose }) => {
 
 							<Grid sx={{ marginTop: "20px" }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Owner's Information
+									Owner&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -314,15 +335,16 @@ const StorageCard = ({ open, onClose }) => {
 									</Grid>
 								))}
 
+
 							<Grid sx={{ marginTop: "20px" }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Deposit Duration
+									Date and Time of Deposit
 								</Typography>
 								<Divider />
 							</Grid>
 
-							{acceptance &&
-								acceptance.map((el) => (
+							{depositedDateTime &&
+								depositedDateTime.map((el) => (
 									<Grid
 										item
 										key={el.name}
