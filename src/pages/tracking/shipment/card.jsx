@@ -20,15 +20,16 @@ import { useTheme } from "@emotion/react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	[`&.${tableCellClasses.head}`]: {
-		backgroundColor: "rgba(18, 18, 18, 0.78)",
+		backgroundColor: theme.palette.background.neutral,
 		border: "none",
 		color: theme.palette.text.primary,
 		width: "200px",
+		borderRadius: theme.shape.borderRadius / 2
 	},
 	[`&.${tableCellClasses.body}`]: {
 		fontSize: 14,
 		backgroundColor: theme.palette.background.paper,
-		color: "rgba(220, 220, 220, 0.8)",
+		color: theme.palette.text.secondary,
 		border: "none",
 	},
 }));
@@ -40,10 +41,17 @@ const ShipmentCard = ({ open, onClose }) => {
 
 	const theme = useTheme()
 
-	const sortedList = theShipment.events.sort((a, b) => {
-		return b.number - a.number;
+	const shipmentEventsSorted = [...(theShipment?.events || [])].sort((a, b) => {
+		const dateA = new Date(a.date);
+		const dateB = new Date(b.date);
+		return dateB - dateA;
 	});
-	const lastItem = sortedList[0];
+
+	const lastItem = shipmentEventsSorted[0];
+
+	const shipmentItems = theShipment?.items ? [...theShipment.items].sort((a, b) => {
+		return b.number - a.number;
+	}) : [];
 
 	const headerTitleList = [
 		{
@@ -286,6 +294,7 @@ const ShipmentCard = ({ open, onClose }) => {
 				height={600}
 				title="Tracking Shipment"
 			>
+
 				{theShipment && theShipment.track_number ? (
 					<Grid container spacing={3} sx={{ my: 3 }}>
 						{headerTitleList.map((item, index) => (
@@ -323,7 +332,7 @@ const ShipmentCard = ({ open, onClose }) => {
 						<Grid container spacing={3}>
 							<Grid sx={{ pt: 10 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Shipper's Information
+									Shipper&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -360,7 +369,7 @@ const ShipmentCard = ({ open, onClose }) => {
 						<Grid container spacing={3}>
 							<Grid sx={{ pt: 10 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Cosignee's Information
+									Cosignee&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -397,7 +406,7 @@ const ShipmentCard = ({ open, onClose }) => {
 						<Grid container spacing={3}>
 							<Grid sx={{ pt: 10 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Collector's Information
+									Collector&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -514,17 +523,14 @@ const ShipmentCard = ({ open, onClose }) => {
 							</Grid>
 
 							{theShipment.items &&
-								theShipment.items
-									.sort((a, b) => {
-										return b.number - a.number;
-									})
+								shipmentItems
 									.map((el, i) => (
 										<TableContainer
 											key={i}
 											sx={{
-												borderRadius: 4,
-												marginLeft: "30px",
-												marginTop: "30px"
+												borderRadius: 1,
+												paddingLeft: "20px",
+												// marginTop: "30px"
 											}}
 										>
 											<Table aria-label="shipment event table">
@@ -580,17 +586,14 @@ const ShipmentCard = ({ open, onClose }) => {
 							</Grid>
 
 							{theShipment.events &&
-								theShipment.events
-									.sort((a, b) => {
-										return b.number - a.number;
-									})
+								shipmentEventsSorted
 									.map((el, i) => (
 										<TableContainer
 											key={i}
 											sx={{
-												borderRadius: 4,
-												marginLeft: "30px",
-												marginTop: "30px"
+												borderRadius: 1,
+												paddingLeft: "20px",
+												// marginTop: "30px"
 											}}
 										>
 											<Table aria-label="shipment event table">
