@@ -6,7 +6,7 @@ import { Box, Grid, Typography, Stack, Divider } from "@mui/material";
 
 const FlightCard = ({ open, onClose }) => {
 	const {
-		data: { data },
+		theFlight: { data },
 	} = useSelector((state) => state.flights);
 
 	const theme = useTheme();
@@ -190,9 +190,6 @@ const FlightCard = ({ open, onClose }) => {
 				height={600}
 				title="Tracking flights"
 			>
-				{console.log("OPEN MODAL >>>>>>>>>>>>>>>>>>>", data)}
-				{console.log("OPEN MODAL >>>>>>>>>>>>>>>>>>>", open)}
-				{console.log("OPEN MODAL >>>>>>>>>>>>>>>>>>>", data)}
 				{data && data.ref_number ? (
 					<>
 						<Stack direction="row" spacing={2} sx={{ pb: 1 }}>

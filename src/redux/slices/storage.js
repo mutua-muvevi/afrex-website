@@ -70,7 +70,6 @@ export function fetchStorage(track_number) {
 					},
 				}
 			);
-
 			const data = await response.data;
 			dispatch(slice.actions.getStorageSuccess(data));
 			return data;

@@ -4,17 +4,17 @@ import * as Yup from "yup";
 import { useDispatch } from "../../../redux/store";
 import { useState } from "react";
 import Textfield from "../../../components/form/textfield/textfield";
-import { fetchFlights } from "../../../redux/slices/flights";
+import { fetchFlight } from "../../../redux/slices/flights";
 import FlightCard from "./card";
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 
 const initialValues = {
 	ref_number: "",
-}
+};
 
 const validationSchema = Yup.object({
 	ref_number: Yup.string().required("Required"),
-})
+});
 
 const Flight = () => {
 	const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Flight = () => {
 
 	const handleSubmit = async (values) => {
 		try {
-			const response = await dispatch(fetchFlights(values.ref_number));
+			const response = await dispatch(fetchFlight(values.ref_number));
 			// extract success message
 			const { success, message, data } = response;
 
@@ -48,10 +48,15 @@ const Flight = () => {
 				}, 5000);
 			}
 		} catch (error) {
-			setAlertMessage(error.error || "An error occurred.");
+			console.log("Error", error);
+			setAlertMessage(
+				error?.error ||
+					error?.response?.data?.error ||
+					"An error occurred."
+			);
 			setAlertSeverity("error");
 		}
-	}
+	};
 	return (
 		<Stack direction="column" spacing={3} sx={{ pb: 5 }}>
 			<Formik
@@ -63,7 +68,9 @@ const Flight = () => {
 					<Form>
 						<Stack direction="column" spacing={2}>
 							{alertMessage && (
-								<Alert severity={alertSeverity}>{alertMessage}</Alert>
+								<Alert severity={alertSeverity}>
+									{alertMessage}
+								</Alert>
 							)}
 							<Textfield
 								name="ref_number"
@@ -75,25 +82,31 @@ const Flight = () => {
 								type="submit"
 								variant="contained"
 								color="primary"
-								startIcon={isSubmitting ? <CircularProgress size={24} /> : null}
+								startIcon={
+									isSubmitting ? (
+										<CircularProgress size={24} />
+									) : null
+								}
 								disabled={isSubmitting}
 							>
-								{isSubmitting ? "Tracking, Please Wait..."  : "Submit"}
+								{isSubmitting
+									? "Tracking, Please Wait..."
+									: "Submit"}
 							</Button>
 						</Stack>
 					</Form>
 				)}
 			</Formik>
 
-			{data && Object.keys(data).length ? (
+			{data && data.ref_number ? (
 				<FlightCard
 					open={openModal}
 					onClose={() => setOpenModal(false)}
-					theFlights={data}
+					theData={data}
 				/>
 			) : null}
 		</Stack>
-	)
-}
+	);
+};
 
-export default Flight
+export default Flight;

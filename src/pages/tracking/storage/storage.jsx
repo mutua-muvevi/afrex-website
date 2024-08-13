@@ -31,6 +31,7 @@ const TrackStorage = () => {
 			const response = await dispatch(fetchStorage(values.track_number));
 			// extract success message
 			const { success, message, data } = response;
+			console.log("Data here", response);
 
 			if (success) {
 				setData(data);
