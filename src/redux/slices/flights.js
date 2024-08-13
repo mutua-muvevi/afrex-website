@@ -10,6 +10,9 @@ const slice = createSlice({
 
 		flight: null,
 		flightError: null,
+
+		theFlight: null,
+		theFlightError: null,
 	},
 	reducers: {
 		startLoading: (state) => {
@@ -25,7 +28,6 @@ const slice = createSlice({
 		fetchFlightsError: (state, action) => {
 			state.error = action.payload;
 		},
-		
 
 		//SET FLIGHT
 		setFlight(state, action) {
@@ -36,6 +38,17 @@ const slice = createSlice({
 		setFlightError(state, action) {
 			state.isLoading = false;
 			state.flightError = action.payload;
+		},
+
+		//FETCH FLIGHT
+		fetchFlightSuccess(state, action) {
+			state.isLoading = false;
+			state.theFlight = action.payload;
+		},
+
+		fetchFlightError(state, action) {
+			state.isLoading = false;
+			state.theFlightError = action.payload;
 		},
 	},
 });
@@ -58,16 +71,13 @@ export const fetchFlights = (ref_number) => async (dispatch) => {
 		const data = response.data;
 		dispatch(slice.actions.fetchFlights(data));
 		return data;
-
 	} catch (error) {
 		dispatch(slice.actions.fetchFlightsError(error));
 		throw error;
-
 	} finally {
 		dispatch(stopLoading());
 	}
 };
-
 
 //---------------------------set flight--------------------------------
 export function setFlight(flight) {
@@ -82,5 +92,34 @@ export function setFlight(flight) {
 		} finally {
 			dispatch(slice.actions.stopLoading());
 		}
-	}
+	};
+}
+
+
+export function fetchFlight(ref_number) {
+	return async (dispatch) => {
+		dispatch(slice.actions.startLoading());
+		try {
+			const response = await axios.get(
+				// `http://localhost:65000/api/flight/fetch/ref_number/${ref_number}`,
+				`https://afrex-bridge-connections-server.onrender.com/api/flight/fetch/ref_number/${ref_number}`,
+				{
+					headers: {
+						"Content-Type": "application/json",
+					},
+				}
+			);
+
+			const data = await response.data;
+			dispatch(slice.actions.fetchFlightSuccess(data));
+			return data;
+
+		} catch (error) {
+			dispatch(slice.actions.fetchFlightError(error));
+			throw error;
+
+		} finally {
+			dispatch(slice.actions.stopLoading());
+		}
+	};
 }
