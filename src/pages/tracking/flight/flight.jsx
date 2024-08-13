@@ -6,15 +6,14 @@ import { useState } from "react";
 import Textfield from "../../../components/form/textfield/textfield";
 import { fetchFlights } from "../../../redux/slices/flights";
 import FlightCard from "./card";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const initialValues = {
-	originAirport: "",
-	destinationAirport: "",
+	ref_number: "",
 }
 
 const validationSchema = Yup.object({
-	originAirport: Yup.string().required("Required"),
-	destinationAirport: Yup.string().required("Required"),
+	ref_number: Yup.string().required("Required"),
 })
 
 const Flight = () => {
@@ -28,7 +27,7 @@ const Flight = () => {
 
 	const handleSubmit = async (values) => {
 		try {
-			const response = await dispatch(fetchFlights(values.originAirport, values.destinationAirport));
+			const response = await dispatch(fetchFlights(values.ref_number));
 			// extract success message
 			const { success, message, data } = response;
 
@@ -67,21 +66,19 @@ const Flight = () => {
 								<Alert severity={alertSeverity}>{alertMessage}</Alert>
 							)}
 							<Textfield
-								name="originAirport"
-								label="Origin Airport"
-								type="text"
-							/>
-							<Textfield
-								name="destinationAirport"
-								label="Destination Airport"
+								name="ref_number"
+								label="Booking reference number"
+								placeholder="Search by booking reference number"
 								type="text"
 							/>
 							<Button
 								type="submit"
 								variant="contained"
+								color="primary"
+								startIcon={isSubmitting ? <CircularProgress size={24} /> : null}
 								disabled={isSubmitting}
 							>
-								Submit
+								{isSubmitting ? "Tracking, Please Wait..."  : "Submit"}
 							</Button>
 						</Stack>
 					</Form>
