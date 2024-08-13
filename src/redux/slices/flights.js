@@ -44,11 +44,11 @@ export const { startLoading, stopLoading } = slice.actions;
 export default slice.reducer;
 
 // Fetch Flight Thunk
-export const fetchFlights = (origin, destination) => async (dispatch) => {
+export const fetchFlights = (ref_number) => async (dispatch) => {
 	dispatch(startLoading());
 	try {
 		const response = await axios.get(
-			`https://afrex-bridge-connections-server.onrender.com/api/flight/fetch/airport?originAirport=${origin}&destinationAirport=${destination}`,
+			`https://afrex-bridge-connections-server.onrender.com/api/flight/fetch/ref_number/${ref_number}`,
 			{
 				headers: {
 					"Content-Type": "application/json",

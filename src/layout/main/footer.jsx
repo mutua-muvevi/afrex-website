@@ -41,7 +41,7 @@ const LINKS = [
 		headline: "Contact",
 		children: [
 			{ name: "info@afrexbridgeconnectionscom", href: "#" },
-			{ name: "Wilson Airport, off Langata Road, Nairobi", href: "#" },
+			{ name: "Comboni Road, Karen Nairobi", href: "#" },
 		],
 	},
 ];

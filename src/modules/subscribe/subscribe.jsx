@@ -168,7 +168,7 @@ const Subscribe = () => {
 								>
 									<img
 										src={Person}
-										alt="Subscribe to Afrogorithm Mail List"
+										alt="Subscribe to Afrex Bridge Connections Mail List"
 										style={imageStyle}
 									/>
 								</Stack>

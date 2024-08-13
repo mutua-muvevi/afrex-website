@@ -67,7 +67,7 @@ const StorageCard = ({ open, onClose }) => {
 
 	const ownerInformation = [
 		{
-			name: "Depositor's Fullname",
+			name: "Owner's Fullname",
 			value: theStorage?.owner?.fullname || "",
 			xl: 4,
 			lg: 4,
@@ -76,7 +76,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Email",
+			name: "Owner's Email",
 			value: theStorage?.owner?.email || "",
 			xl: 4,
 			lg: 4,
@@ -85,7 +85,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Telephone",
+			name: "Owner's Telephone",
 			value: theStorage?.owner?.telephone || "",
 			xl: 4,
 			lg: 4,
@@ -94,7 +94,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Company",
+			name: "Owner's Company",
 			value: theStorage?.owner?.company || "",
 			xl: 4,
 			lg: 4,
@@ -103,7 +103,7 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Depositor's Address",
+			name: "Owner's Address",
 			value: theStorage?.owner?.address || "",
 			xl: 4,
 			lg: 4,
@@ -113,10 +113,31 @@ const StorageCard = ({ open, onClose }) => {
 		},
 	];
 
-	const acceptance = [
+	// const acceptance = [
+	// 	{
+	// 		name: "Accepted From Date",
+	// 		value: theStorage?.acceptance?.from?.date || "",
+	// 		xl: 4,
+	// 		lg: 4,
+	// 		md: 4,
+	// 		sm: 12,
+	// 		xs: 12,
+	// 	},
+	// 	{
+	// 		name: "Accepted From Time",
+	// 		value: theStorage?.acceptance?.from?.time || "",
+	// 		xl: 4,
+	// 		lg: 4,
+	// 		md: 4,
+	// 		sm: 12,
+	// 		xs: 12,
+	// 	},
+	// ];
+
+	const depositedDateTime = [
 		{
-			name: "Accepted From Date",
-			value: theStorage?.acceptance?.from?.date || "",
+			name: "Date Deposited",
+			value: theStorage?.depositDate || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
@@ -124,33 +145,15 @@ const StorageCard = ({ open, onClose }) => {
 			xs: 12,
 		},
 		{
-			name: "Accepted From Time",
-			value: theStorage?.acceptance?.from?.time || "",
+			name: "Time Deposited",
+			value: theStorage?.depositTime || "",
 			xl: 4,
 			lg: 4,
 			md: 4,
 			sm: 12,
 			xs: 12,
 		},
-		{
-			name: "To Date",
-			value: theStorage?.acceptance?.to?.date || "",
-			xl: 4,
-			lg: 4,
-			md: 4,
-			sm: 12,
-			xs: 12,
-		},
-		{
-			name: "To Time",
-			value: theStorage?.acceptance?.to?.time || "",
-			xl: 4,
-			lg: 4,
-			md: 4,
-			sm: 12,
-			xs: 12,
-		},
-	];
+	]
 
 	const otherDetails = [
 		{
@@ -270,9 +273,9 @@ const StorageCard = ({ open, onClose }) => {
 				{theStorage.depositor ? (
 					<Box>
 						<Grid container spacing={3}>
-							<Grid sx={{ p: 5 }} item xs={12}>
+							<Grid sx={{ pt: 5 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Depositor's Information
+									Depositor&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -293,7 +296,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
@@ -303,7 +306,7 @@ const StorageCard = ({ open, onClose }) => {
 
 							<Grid sx={{ marginTop: "20px" }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Owner's Information
+									Owner&apos;s Information
 								</Typography>
 								<Divider />
 							</Grid>
@@ -324,7 +327,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
@@ -332,15 +335,16 @@ const StorageCard = ({ open, onClose }) => {
 									</Grid>
 								))}
 
+
 							<Grid sx={{ marginTop: "20px" }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Deposit Duration
+									Date and Time of Deposit
 								</Typography>
 								<Divider />
 							</Grid>
 
-							{acceptance &&
-								acceptance.map((el) => (
+							{depositedDateTime &&
+								depositedDateTime.map((el) => (
 									<Grid
 										item
 										key={el.name}
@@ -355,7 +359,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>
@@ -386,7 +390,7 @@ const StorageCard = ({ open, onClose }) => {
 										</Typography>
 										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
 											<Typography variant="body1">
-												{el.value && el.value.length > 0
+												{el.value && el.value.length > 1
 													? el.value
 													: "_________________"}
 											</Typography>

@@ -13,26 +13,27 @@ const contactItems = [
 	{
 		icon: "material-symbols:mark-email-read-rounded",
 		title: "Email",
-		subtitle: "info@afrexbridgeconnectionscom, admin@afrexbridgeconnectionscom",
+		subtitle:
+			"info@afrexbridgeconnectionscom, admin@afrexbridgeconnectionscom",
 		text: "Email us anytime",
 	},
 	{
 		icon: "tabler:phone-filled",
 		title: "Call us",
-		subtitle: "+254 715 899 968",
+		subtitle: "0207906611",
 		text: "Call us during business hours",
 	},
 	{
 		icon: "zondicons:location",
 		title: "Location",
 		subtitle: "Nairobi, Kenya",
-		text: "Bosto Rd, off Langata Road, Karen",
+		text: "Comboni Road, Karen",
 	},
 ];
 
 const ContactUpperBody = () => {
 	const mapSource =
-		"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.710567481948!2d36.74756930611083!3d-1.3501827626411362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f058b47391ff7%3A0x34ad2d106c6f6c37!2sAfrex%20Bridge%20Connections%20LLC!5e0!3m2!1sen!2ske!4v1706701001061!5m2!1sen!2ske";
+		"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3988.7143511013805!2d36.7446437200458!3d-1.347874854628702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1712138840456!5m2!1sen!2ske";
 
 	return (
 		<div>
@@ -41,8 +42,8 @@ const ContactUpperBody = () => {
 					<div>
 						<Grid container spacing={3}>
 							{contactItems.map((item, index) => (
-								<Grid item xs={12}  md={4} key={index}>
-									<Card sx={{minHeight: 250}}>
+								<Grid item xs={12} md={4} key={index}>
+									<Card sx={{ minHeight: 250 }}>
 										<CardContent>
 											<Stack
 												direction="column"

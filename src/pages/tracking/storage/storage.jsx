@@ -6,6 +6,7 @@ import { useDispatch } from "../../../redux/store";
 import { useState } from "react";
 import Textfield from "../../../components/form/textfield/textfield";
 import StorageCard from "./card";
+import CircularProgress from '@mui/material/CircularProgress';
 
 //initial value
 const initialValues = {
@@ -79,8 +80,9 @@ const TrackStorage = () => {
 								color="primary"
 								type="submit"
 								disabled={isSubmitting}
+								startIcon={isSubmitting ? <CircularProgress size={24} /> : null}
 							>
-								Submit
+								{isSubmitting ? "Tracking, Please Wait..."  : "Submit"}
 							</Button>
 						</Stack>
 					</Form>

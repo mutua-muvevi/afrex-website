@@ -6,6 +6,7 @@ import { useState } from "react";
 import Textfield from "../../../components/form/textfield/textfield";
 import ShipmentCard from "./card";
 import { fetchShipment } from "../../../redux/slices/shipment";
+import CircularProgress from '@mui/material/CircularProgress';
 
 //initial value
 const initialValues = {
@@ -78,8 +79,9 @@ const TrackShipment = () => {
 								color="primary"
 								type="submit"
 								disabled={isSubmitting}
+								startIcon={isSubmitting ? <CircularProgress size={24} /> : null}
 							>
-								Submit
+								{isSubmitting ? "Tracking, Please Wait..."  : "Submit"}
 							</Button>
 						</Stack>
 					</Form>
