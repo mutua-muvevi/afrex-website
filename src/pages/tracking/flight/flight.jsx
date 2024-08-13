@@ -84,8 +84,8 @@ const Flight = () => {
 					</Form>
 				)}
 			</Formik>
-			
-			{data && data.length > 0 ? (
+
+			{data && Object.keys(data).length ? (
 				<FlightCard
 					open={openModal}
 					onClose={() => setOpenModal(false)}
