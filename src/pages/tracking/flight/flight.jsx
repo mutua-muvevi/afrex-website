@@ -48,7 +48,6 @@ const Flight = () => {
 				}, 5000);
 			}
 		} catch (error) {
-			console.log("Error", error);
 			setAlertMessage(
 				error?.error ||
 					error?.response?.data?.error ||

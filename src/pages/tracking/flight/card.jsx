@@ -433,7 +433,7 @@ const FlightCard = ({ open, onClose }) => {
 						<Grid container spacing={3}>
 							<Grid sx={{ pt: 10 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Departure
+									Flighr Status
 								</Typography>
 								<Divider />
 							</Grid>
