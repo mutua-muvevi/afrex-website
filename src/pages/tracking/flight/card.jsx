@@ -428,12 +428,12 @@ const FlightCard = ({ open, onClose }) => {
 					</Box>
 				) : null}
 
-				{data && data.status ? (
+				{data && data.status && (data.status.title || data.status.description) ? (
 					<Box sx={{ my: 3 }}>
 						<Grid container spacing={3}>
 							<Grid sx={{ pt: 10 }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
-									Flighr Status
+									Flight Status
 								</Typography>
 								<Divider />
 							</Grid>
