@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 // @mui
-import { useTheme } from "@mui/material/styles";
+// import { useTheme } from "@mui/material/styles";
 import {
-	Stack,
-	Typography,
+	// Stack,
+	// Typography,
 	Box,
 	Rating,
-	LinearProgress,
-	IconButton,
+	// LinearProgress,
+	// IconButton,
 	Card,
 	CardHeader,
 } from "@mui/material";
@@ -18,15 +18,15 @@ import {
 	getGridNumericOperators,
 } from "@mui/x-data-grid";
 // utils
-import { fPercent } from "../../utils/format-number";
+// import { fPercent } from "../../utils/format-number";
 // components
-import Label from "../label";
-import Iconify from "../iconify";
-import { CustomAvatar } from "../custom-avatar";
+// import Label from "../label";
+// import Iconify from "../iconify";
+// import { CustomAvatar } from "../custom-avatar";
 import { styled } from "@mui/system";
 import {
 	processDataForGrid,
-	renderNestedTable,
+	// renderNestedTable,
 } from "../../utils/datagrid/data";
 
 import ModalComponent from "./modal";
@@ -165,23 +165,23 @@ export default function DataGridCustom({
 
 // ----------------------------------------------------------------------
 
-function RenderStatus(getStatus) {
-	const theme = useTheme();
-	const isLight = theme.palette.mode === "light";
-	return (
-		<Label
-			variant={isLight ? "soft" : "filled"}
-			color={
-				(getStatus === "busy" && "error") ||
-				(getStatus === "away" && "warning") ||
-				"success"
-			}
-			sx={{ mx: "auto" }}
-		>
-			{getStatus}
-		</Label>
-	);
-}
+// function RenderStatus(getStatus) {
+// 	const theme = useTheme();
+// 	const isLight = theme.palette.mode === "light";
+// 	return (
+// 		<Label
+// 			variant={isLight ? "soft" : "filled"}
+// 			color={
+// 				(getStatus === "busy" && "error") ||
+// 				(getStatus === "away" && "warning") ||
+// 				"success"
+// 			}
+// 			sx={{ mx: "auto" }}
+// 		>
+// 			{getStatus}
+// 		</Label>
+// 	);
+// }
 
 // ----------------------------------------------------------------------
 
