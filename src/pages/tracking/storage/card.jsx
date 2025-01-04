@@ -3,13 +3,14 @@ import { useSelector } from "../../../redux/store";
 import ModalComponent from "../../../components/modal/modal";
 import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
+import DataGridCustom from "../../../components/datagrid/custom";
 
 const StorageCard = ({ open, onClose }) => {
 	const {
 		storage: { data: theStorage },
 	} = useSelector((state) => state.storage);
 	const theme = useTheme();
-	
+
 	const headerTitleList = [
 		{
 			name: "Track / Reference Number",
@@ -153,7 +154,7 @@ const StorageCard = ({ open, onClose }) => {
 			sm: 12,
 			xs: 12,
 		},
-	]
+	];
 
 	const otherDetails = [
 		{
@@ -294,7 +295,14 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
+										<Box
+											sx={{
+												p: 1,
+												backgroundColor:
+													theme.palette.background
+														.neutral,
+											}}
+										>
 											<Typography variant="body1">
 												{el.value && el.value.length > 1
 													? el.value
@@ -325,7 +333,14 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
+										<Box
+											sx={{
+												p: 1,
+												backgroundColor:
+													theme.palette.background
+														.neutral,
+											}}
+										>
 											<Typography variant="body1">
 												{el.value && el.value.length > 1
 													? el.value
@@ -334,7 +349,6 @@ const StorageCard = ({ open, onClose }) => {
 										</Box>
 									</Grid>
 								))}
-
 
 							<Grid sx={{ marginTop: "20px" }} item xs={12}>
 								<Typography variant="h4" gutterBottom>
@@ -357,7 +371,14 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
+										<Box
+											sx={{
+												p: 1,
+												backgroundColor:
+													theme.palette.background
+														.neutral,
+											}}
+										>
 											<Typography variant="body1">
 												{el.value && el.value.length > 1
 													? el.value
@@ -388,7 +409,14 @@ const StorageCard = ({ open, onClose }) => {
 										<Typography variant="h6">
 											{el.name}
 										</Typography>
-										<Box  sx={{p:1, backgroundColor: theme.palette.background.neutral}}>
+										<Box
+											sx={{
+												p: 1,
+												backgroundColor:
+													theme.palette.background
+														.neutral,
+											}}
+										>
 											<Typography variant="body1">
 												{el.value && el.value.length > 1
 													? el.value
@@ -397,6 +425,18 @@ const StorageCard = ({ open, onClose }) => {
 										</Box>
 									</Grid>
 								))}
+
+							{theStorage.productDetails ? (
+								<Grid sx={{ marginTop: "20px" }} item xs={12}>
+									<DataGridCustom
+										data={theStorage.productDetails}
+										checkboxSelection={false}
+										title={"Product details"}
+										maxWidth={"100%"}
+										height="450px"
+									/>
+								</Grid>
+							) : null}
 						</Grid>
 					</Box>
 				) : null}
